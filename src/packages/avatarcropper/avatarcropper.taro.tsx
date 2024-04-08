@@ -7,8 +7,8 @@ import React, {
 } from 'react'
 import Taro, { useReady, createSelectorQuery } from '@tarojs/taro'
 import classNames from 'classnames'
-import { Canvas } from '@tarojs/components'
-import { Button } from '@/packages/button/button.taro'
+import { Button, Canvas, CoverView } from '@tarojs/components'
+// import { Button } from '@/packages/button/button.taro'
 import { BasicComponent, ComponentDefaults } from '@/utils/typings'
 import { useTouch } from '@/utils/use-touch'
 import { clamp, preventDefault } from '@/utils'
@@ -36,12 +36,12 @@ const defaultProps = {
   maxZoom: 3,
   space: 10,
   toolbar: [
-    <Button type="danger" key="cancel">
+    <Button type="warn" key="cancel">
       取消
     </Button>,
-    <Button key="reset">重置</Button>,
+    <Button key="default">重置</Button>,
     <Button key="rotate">旋转</Button>,
-    <Button type="success" key="confirm">
+    <Button type="primary" key="confirm">
       确认
     </Button>,
   ],
@@ -404,6 +404,19 @@ export const AvatarCropper: FunctionComponent<Partial<AvatarCropperProps>> = (
     path: string
   }
 
+  const createHighlight = () => {
+    const ctx = Taro.createCanvasContext('test')
+    ctx.setFillStyle('rgba(0, 0, 0, 0.7)')
+    ctx.fillRect(0, 0, state.displayWidth, state.displayHeight)
+    ctx.clearRect(
+      space * pixelRatio,
+      (state.displayHeight - state.cropperWidth) / 2,
+      state.cropperWidth,
+      state.cropperWidth
+    )
+    ctx.draw()
+  }
+
   // 选择图片后回调
   const imageChange = async (file: TFileType) => {
     Taro.getImageInfo({
@@ -411,6 +424,7 @@ export const AvatarCropper: FunctionComponent<Partial<AvatarCropperProps>> = (
     }).then((res: Taro.getImageInfo.SuccessCallbackResult) => {
       setVisible(true)
       setDrawImgInfo(res)
+      createHighlight()
     })
   }
 
@@ -449,7 +463,7 @@ export const AvatarCropper: FunctionComponent<Partial<AvatarCropperProps>> = (
   const { startMoveX, startMoveY, startScale, startDistance } = startMove
 
   // 触摸开始
-  const onTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+  const onTouchStart = (event: React.TouchEvent<HTMLElement>) => {
     const { touches } = event
     const { offsetX } = touch
 
@@ -473,7 +487,7 @@ export const AvatarCropper: FunctionComponent<Partial<AvatarCropperProps>> = (
   }
 
   // 触摸移动
-  const onTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+  const onTouchMove = (event: React.TouchEvent<HTMLElement>) => {
     const { touches } = event
 
     touch.move(event)
@@ -502,7 +516,7 @@ export const AvatarCropper: FunctionComponent<Partial<AvatarCropperProps>> = (
   }
 
   // 触摸结束
-  const onTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+  const onTouchEnd = (event: React.TouchEvent<HTMLElement>) => {
     let stopPropagation = false
 
     if (moving || zooming) {
@@ -661,17 +675,17 @@ export const AvatarCropper: FunctionComponent<Partial<AvatarCropperProps>> = (
     const actions = [cancel, reset, rotate, confirm]
     return (
       <>
-        <div className={`${classPrefix}-popup-toolbar-flex`}>
+        <CoverView className={`${classPrefix}-popup-toolbar-flex`}>
           {actions.map((action, index) => (
-            <div
+            <CoverView
               key={index}
               className={`${classPrefix}-popup-toolbar-item`}
               onClick={(_e) => action()}
             >
               {toolbar[index]}
-            </div>
+            </CoverView>
           ))}
-        </div>
+        </CoverView>
       </>
     )
   }
@@ -684,24 +698,39 @@ export const AvatarCropper: FunctionComponent<Partial<AvatarCropperProps>> = (
           className={`${classPrefix}-popup`}
           style={{ display: visible ? 'block' : 'none' }}
         >
+          {/* <div className={`${classPrefix}-popup-inner`}> */}
           <Canvas
             id={canvasId}
             canvas-id={canvasId}
             type={showAlipayCanvas2D ? '2d' : undefined}
             style={canvasStyle}
             className={`${classPrefix}-popup-canvas`}
+            disableScroll
           />
-          <div
+          <Canvas
+            className={`${classPrefix}-popup-highlight`}
+            id="test"
+            canvas-id="test"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          />
+          {/* </div> */}
+          {/* <CoverView
             className={`${classPrefix}-popup-highlight`}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            <div className="highlight" style={highlightStyle} />
-          </div>
-          <div className={toolbarPositionCls}>
+            222222
+            <CoverView className="highlight" style={highlightStyle}>
+              111111
+            </CoverView>
+          </CoverView> */}
+
+          <CoverView className={toolbarPositionCls}>
             <ToolBar />
-          </div>
+          </CoverView>
         </div>
       </>
     )

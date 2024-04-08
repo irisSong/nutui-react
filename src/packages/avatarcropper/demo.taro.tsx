@@ -3,8 +3,6 @@ import Taro from '@tarojs/taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import Header from '@/sites/components/header'
 import Demo1 from './demos/taro/demo1'
-import Demo2 from './demos/taro/demo2'
-import Demo3 from './demos/taro/demo3'
 
 const AvatarCropperDemo = () => {
   const [translated] = useTranslate({
@@ -27,15 +25,23 @@ const AvatarCropperDemo = () => {
   return (
     <>
       <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} full`}>
+      <div
+        className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} full`}
+        style={{
+          position: 'fixed',
+          height: '100%',
+          width: '100%',
+          overflow: 'hidden',
+        }}
+      >
         <h2>{translated.basic}</h2>
         <Demo1 />
 
-        <h2>{translated.toolbar}</h2>
+        {/* <h2>{translated.toolbar}</h2>
         <Demo2 />
 
         <h2>{translated.round}</h2>
-        <Demo3 />
+        <Demo3 /> */}
       </div>
     </>
   )
