@@ -1,5 +1,6 @@
 import React from 'react'
 import { SafeArea } from '@nutui/nutui-react-taro'
+import { View } from '@tarojs/components'
 
 function generateRandomTextArray(count: number) {
   const characters = 'abcdefghijklmnopqrstuvwxyz'
@@ -19,7 +20,7 @@ function generateRandomTextArray(count: number) {
 const Demo1 = () => {
   return (
     <>
-      <div>{generateRandomTextArray(900).join(' ')}</div>
+      <View>{generateRandomTextArray(900).join(' ')}</View>
       <SafeArea position="bottom" />
     </>
   )

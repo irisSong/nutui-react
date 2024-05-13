@@ -1,6 +1,6 @@
 .nut-safe-area {
-  display: block;
   width: 100%;
+  background-color: violet;
 }
 .nut-safe-area-position-top {
   padding-top: calc(env(safe-area-inset-top) * 1);
