@@ -28,7 +28,7 @@ export interface InputProps extends BasicComponent {
   name: string
   defaultValue?: string
   value?: string
-  placeholder: string
+  placeholder?: string
   align: InputAlign
   disabled: boolean
   readOnly: boolean
@@ -50,7 +50,7 @@ const defaultProps = {
   ...ComponentDefaults,
   type: 'text',
   name: '',
-  placeholder: '',
+  placeholder: undefined,
   confirmType: 'done',
   align: 'left',
   required: false,
@@ -105,8 +105,8 @@ export const Input = forwardRef(
       ...props,
     }
     const [value, setValue] = usePropsValue<string>({
-      value: props.value,
-      defaultValue: props.defaultValue,
+      value: _value,
+      defaultValue,
       finalValue: '',
       onChange,
     })
@@ -184,16 +184,11 @@ export const Input = forwardRef(
     }
 
     const handleBlur = (event: any) => {
-      if (Taro.getEnv() === 'WEB') {
-        const val: any = (event.target as any).value
-        updateValue(val, 'onBlur')
-        setTimeout(() => {
-          setActive(false)
-        }, 50)
-      } else {
-        updateValue(value, 'onBlur')
+      const val = Taro.getEnv() === 'WEB' ? (event.target as any).value : value
+      updateValue(val, 'onBlur')
+      setTimeout(() => {
         setActive(false)
-      }
+      }, 200)
     }
     const inputType = (type: any) => {
       if (getEnv() === ENV_TYPE.WEB) {
@@ -237,7 +232,9 @@ export const Input = forwardRef(
           type={inputType(type) as any}
           password={type === 'password'}
           maxlength={maxLength}
-          placeholder={placeholder || locale.placeholder}
+          placeholder={
+            placeholder === undefined ? locale.placeholder : placeholder
+          }
           disabled={disabled || readOnly}
           value={value}
           focus={autoFocus}
@@ -255,6 +252,7 @@ export const Input = forwardRef(
                 ? 'flex'
                 : 'none',
             alignItems: 'center',
+            cursor: 'pointer',
           }}
           onClick={(e) => {
             e.stopPropagation()
@@ -271,5 +269,4 @@ export const Input = forwardRef(
   }
 )
 
-Input.defaultProps = defaultProps
 Input.displayName = 'NutInput'

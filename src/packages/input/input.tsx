@@ -23,7 +23,7 @@ export interface InputProps extends BasicComponent {
   name: string
   defaultValue?: string
   value?: string
-  placeholder: string
+  placeholder?: string
   align: InputAlign
   disabled: boolean
   readOnly: boolean
@@ -45,7 +45,7 @@ const defaultProps = {
   ...ComponentDefaults,
   type: 'text',
   name: '',
-  placeholder: '',
+  placeholder: undefined,
   confirmType: 'done',
   align: 'left',
   required: false,
@@ -91,14 +91,16 @@ export const Input = forwardRef(
       confirmType,
       defaultValue,
       value: _value,
+      onCompositionStart,
+      onCompositionEnd,
       ...rest
     } = {
       ...defaultProps,
       ...props,
     }
     const [value, setValue] = usePropsValue<string>({
-      value: props.value,
-      defaultValue: props.defaultValue,
+      value: _value,
+      defaultValue,
       finalValue: '',
       onChange,
     })
@@ -211,7 +213,9 @@ export const Input = forwardRef(
           }}
           type={inputType(type)}
           maxLength={maxLength}
-          placeholder={placeholder || locale.placeholder}
+          placeholder={
+            placeholder === undefined ? locale.placeholder : placeholder
+          }
           disabled={disabled}
           readOnly={readOnly}
           value={value}
@@ -228,16 +232,16 @@ export const Input = forwardRef(
           }}
           onCompositionStart={(e) => {
             composingRef.current = true
-            props.onCompositionStart?.(e)
+            onCompositionStart?.(e)
           }}
           onCompositionEnd={(e) => {
             composingRef.current = false
-            props.onCompositionEnd?.(e)
+            onCompositionEnd?.(e)
           }}
         />
         {clearable && !readOnly && active && value.length > 0 ? (
           <span
-            style={{ display: 'flex', alignItems: 'center' }}
+            style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
             onClick={() => {
               if (!disabled) {
                 setValue('')
@@ -253,5 +257,4 @@ export const Input = forwardRef(
   }
 )
 
-Input.defaultProps = defaultProps
 Input.displayName = 'NutInput'

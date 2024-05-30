@@ -102,9 +102,9 @@ export const ActionSheet: FunctionComponent<
           </div>
         )}
       </div>
+      <div className={`${classPrefix}-safe-area`} />
     </Popup>
   )
 }
 
-ActionSheet.defaultProps = defaultProps
 ActionSheet.displayName = 'NutActionSheet'
