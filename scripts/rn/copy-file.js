@@ -42,17 +42,6 @@ const copyFile = async (from, to, success, isSingle = false) => {
       return
     }
     console.log(`${success}!>`, to)
-<<<<<<< HEAD
-    adapted
-      .filter(function (item) {
-        return item !== 'cellgroup'
-      })
-      .map((item) => {
-        modify(
-          `${targetBaseUrl}/packages/${item}/demo.taro.tsx`,
-          `import '../../../styles/demo.scss';\n`
-        )
-=======
 
     adapted.map((item) => {
       if (item) {
@@ -62,17 +51,12 @@ const copyFile = async (from, to, success, isSingle = false) => {
             `import '../../../styles/demo.scss';\n`
           )
         }
->>>>>>> upstream/dev-harmony
         modify(
           `${targetBaseUrl}/packages/${item}/${item}.taro.tsx`,
           `import "./${item}.harmony.css";\n`
         )
-<<<<<<< HEAD
-      })
-=======
       }
     })
->>>>>>> upstream/dev-harmony
   })
 }
 
