@@ -1,5 +1,5 @@
 import { Empty } from './empty.taro'
 
-export type { EmptyProps } from './empty'
+export type { EmptyProps, EmptyAction } from './empty'
 
 export default Empty
