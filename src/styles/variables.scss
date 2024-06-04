@@ -859,6 +859,10 @@ $switch-line-height: var(--nutui-switch-line-height, 24px) !default;
 $switch-border-radius: var(--nutui-switch-border-radius, 8px) !default;
 $switch-inside-width: var(--nutui-switch-inside-width, 20px) !default;
 $switch-inside-height: var(--nutui-switch-inside-height, 20px) !default;
+$switch-inside-border-radius: var(
+  --nutui-switch-inside-border-radius,
+  $radius-s
+) !default;
 $switch-inside-open-transform: var(
   --nutui-switch-inside-open-transform,
   translateX(18px)
@@ -1021,7 +1025,7 @@ $notify-font-size: var(--nutui-notify-font-size, $font-size-base) !default;
 $notify-height: var(--nutui-notify-height, 40px) !default;
 $notify-base-background-color: var(
   --nutui-notify-base-background-color,
-  $color-primary-gradient-1
+  $color-primary
 ) !default;
 $notify-primary-background-color: var(
   --nutui-notify-primary-background-color,
