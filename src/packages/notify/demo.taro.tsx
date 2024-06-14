@@ -29,10 +29,7 @@ const NotifyDemo = () => {
     <>
       <Header />
       <ScrollView style={rn() ? { position: 'relative' } : {}}>
-        <View
-          className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}
-          style={{ paddingBottom: '30px' }}
-        >
+        <View className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
           <View className="h2">{translated.basic}</View>
           <Demo1 />
           <View className="h2">{translated.t1}</View>
