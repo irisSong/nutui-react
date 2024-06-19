@@ -30,16 +30,18 @@
   font-size: 10px;
 }
 .nut-countdown-number {
-  min-width: 14px;
+  min-width: 20px;
   padding: 0 1px;
   border-radius: 2px;
   margin: 0 2px;
+  text-align: center;
 }
 .nut-countdown-number-primary {
-  min-width: 14px;
+  min-width: 20px;
   padding: 0 1px;
   border-radius: 2px;
   margin: 0 2px;
+  text-align: center;
 }
 .nut-countdown-number {
   border: 1px solid #ffebf1;
@@ -49,7 +51,7 @@
 .nut-countdown-number-primary {
   border: 1px solid #ff0f23;
   background-color: #ff0f23;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .nut-countdown-unit {
   color: #ff0f23;
