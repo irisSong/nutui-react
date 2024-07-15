@@ -48,7 +48,7 @@ if (process.env.TARO_ENV === 'jdhybrid') {
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 // if (process.env.TARO_ENV === 'jdharmony') {
-//   plugins = ['@test/taro-platform-jdharmony']
+//   plugins = ['@jdtaro/taro-platform-jdharmony']
 // }
 
 const config = {
@@ -101,6 +101,11 @@ const config = {
     hapName: 'entry',
     // 【可选】modules 的入口名称，默认为 'default'
     name: 'default',
+    ohPackage: {
+      dependencies: {
+        '@jd-oh/recommend': '1.1.7',
+      },
+    },
     useNesting: true,
     postcss: {
       pxtransform: {

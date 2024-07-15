@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Cell, Overlay } from '@nutui/nutui-react-taro'
 import { View } from '@tarojs/components'
+import { harmony } from '@/utils/platform-taro'
 
 const Demo1 = () => {
   const [visible, setVisible] = useState(false)
@@ -13,9 +14,11 @@ const Demo1 = () => {
   return (
     <>
       <Cell>
-        <View onClick={handleToggleShow}>点击按钮显示遮罩层</View>
+        <View>点击按钮显示遮罩层</View>
       </Cell>
-
+      <View>111</View>
+      {harmony() ? <jdrecommend /> : null}
+      <View>111</View>
       <Overlay
         visible={visible}
         onClick={onClose}

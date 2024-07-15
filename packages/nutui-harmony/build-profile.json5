@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/tongen/.ohos/config/default_nutui-harmony_PK697Wu5mnc6ZwkFy1SeSNQa86VdzjbAFwDwqKdj-o0=.cer",
-          "storePassword": "0000001B1D7AA645FFDC09EF80DB9127EE1487532F04045B7C357F80025FC2F69AAB86F59959BFF647D2ED",
+          "certpath": "/Users/songchenglin1/.ohos/config/default_nutui-harmony_Er7WM8ALFWuCvk786YC7reJriqQ2GO_eGaK2mnogZbk=.cer",
+          "storePassword": "0000001A408BB7FF56EE14A8DFEEA44B18C605A36E66E82EAC5C5D32E10957947998999460383508B97E",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B3046DD1422DFC16BA1BA8DF23A9D04C17FE2AA1CE5E27F1B3BBD036890625D4F51086AC2A4B3D2",
-          "profile": "/Users/tongen/.ohos/config/default_nutui-harmony_PK697Wu5mnc6ZwkFy1SeSNQa86VdzjbAFwDwqKdj-o0=.p7b",
+          "keyPassword": "0000001AE84FC51F11E1A255B3ECF5FCA496AC1830990256DEED1FE237DFC830B46148B990CFBD18201E",
+          "profile": "/Users/songchenglin1/.ohos/config/default_nutui-harmony_Er7WM8ALFWuCvk786YC7reJriqQ2GO_eGaK2mnogZbk=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/tongen/.ohos/config/default_nutui-harmony_PK697Wu5mnc6ZwkFy1SeSNQa86VdzjbAFwDwqKdj-o0=.p12"
+          "storeFile": "/Users/songchenglin1/.ohos/config/default_nutui-harmony_Er7WM8ALFWuCvk786YC7reJriqQ2GO_eGaK2mnogZbk=.p12"
         }
       }
     ],
@@ -19,7 +19,7 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "4.1.0(11)",
+        "compatibleSdkVersion": "5.0.0(12)",
         "runtimeOS": "HarmonyOS"
       }
     ],

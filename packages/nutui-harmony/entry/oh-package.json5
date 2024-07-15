@@ -5,6 +5,8 @@
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {},
+  "dependencies": {
+    "@jd-oh/recommend": "1.1.7"
+  },
   "devDependencies": {}
 }
