@@ -11,7 +11,7 @@ import React, {
 import classNames from 'classnames'
 import { getSystemInfoSync, usePageScroll } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { CSSTransition } from 'react-transition-group'
+// import { CSSTransition } from 'react-transition-group'
 import { Check } from '@nutui/icons-react-taro'
 import { Overlay } from '@/packages/overlay/overlay.taro'
 import { getRectByTaro } from '@/utils/get-rect-by-taro'
@@ -219,16 +219,7 @@ export const MenuItem = forwardRef((props: Partial<MenuItemProps>, ref) => {
           ...isShow(),
         }}
       >
-        <CSSTransition
-          nodeRef={cssRef}
-          in={showPopup}
-          timeout={100}
-          classNames={
-            direction === 'down'
-              ? 'nut-menu-container-down'
-              : 'nut-menu-container-up'
-          }
-        >
+        {showPopup ? (
           <View className="nut-menu-container-content">
             {options?.map((item: any, index: any) => {
               return (
@@ -272,7 +263,7 @@ export const MenuItem = forwardRef((props: Partial<MenuItemProps>, ref) => {
             })}
             {children}
           </View>
-        </CSSTransition>
+        ) : null}
       </View>
     </View>
   )
