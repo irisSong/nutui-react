@@ -15,7 +15,8 @@
 .nut-menu-bar {
   position: relative;
   display: flex;
-  line-height: $menu-bar-line-height;
+  align-items: center;
+  height: $menu-bar-line-height;
   background-color: $color-background-overlay;
   box-shadow: $menu-bar-box-shadow;
 
@@ -37,7 +38,7 @@
 
   &-text {
     @include text-ellipsis;
-    display: block;
+    display: inline-flex;
     padding: $menu-title-padding;
   }
 

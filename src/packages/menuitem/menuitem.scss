@@ -1,6 +1,7 @@
 @import '../overlay/overlay.scss';
 
 .nut-menu-container {
+  position: relative;
   &-content {
     padding: $menu-content-padding;
     max-height: $menu-content-max-height;
