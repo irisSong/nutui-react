@@ -76,6 +76,8 @@ export const MenuItem = forwardRef((props: Partial<MenuItemProps>, ref) => {
     ...props,
   } as any
 
+  console.log('parent', parent, 'parent.menuRef', parent.menuRef.current)
+
   const [showPopup, setShowPopup] = useState(show)
   const [innerValue, setValue] = usePropsValue({
     defaultValue,
@@ -92,9 +94,19 @@ export const MenuItem = forwardRef((props: Partial<MenuItemProps>, ref) => {
   }, [show])
 
   const getParentOffset = useCallback(() => {
+    console.log('rect==>0')
     setTimeout(async () => {
       const p = parent.menuRef.current
+      console.log('rect==>1')
+      setPosition({
+        height: 168,
+        top: 168,
+      })
       const rect = await getRectByTaro(p)
+      console.log('rect==>', {
+        height: rect.height,
+        top: rect.top,
+      })
       setPosition({
         height: rect.height,
         top: rect.top,
