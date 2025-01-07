@@ -82,4 +82,42 @@ describe('configprovider', () => {
       '--nutui-color-primary: green; --nutui-color-primary-stop-1: green; --nutui-color-primary-stop-2: green; margin: 8px;'
     )
   })
+
+  // 测试主题变更
+  test('should theme change correctly', () => {
+    const initialTheme = {
+      nutuiColorPrimary: 'green',
+      nutuiColorPrimaryStop1: 'green',
+      nutuiColorPrimaryStop2: 'green',
+    }
+
+    const newTheme = {
+      nutuiColorPrimary: 'blue',
+      nutuiColorPrimaryStop1: 'blue',
+      nutuiColorPrimaryStop2: 'blue',
+    }
+
+    const { container, rerender } = render(
+      <ConfigProvider data-testid="configprovider" theme={initialTheme}>
+        <div>测试</div>
+      </ConfigProvider>
+    )
+
+    let ele = container.querySelector('.nut-configprovider')
+    expect(ele).toHaveStyle(
+      '--nutui-color-primary: green; --nutui-color-primary-stop-1: green; --nutui-color-primary-stop-2: green;'
+    )
+
+    // Rerender with new theme
+    rerender(
+      <ConfigProvider data-testid="configprovider" theme={newTheme}>
+        <div>测试</div>
+      </ConfigProvider>
+    )
+
+    ele = container.querySelector('.nut-configprovider')
+    expect(ele).toHaveStyle(
+      '--nutui-color-primary: blue; --nutui-color-primary-stop-1: blue; --nutui-color-primary-stop-2: blue;'
+    )
+  })
 })
