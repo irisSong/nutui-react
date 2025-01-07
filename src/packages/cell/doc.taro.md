@@ -54,7 +54,8 @@ import { Cell } from '@nutui/nutui-react-taro'
 
 ### 链接 | 分组用法
 
-使用 `nut-cell-group` 支持 `title`和`extra`
+使用 `nut-cell-group` 支持 `title` 和 `description`
+
 :::demo
 
 <CodeBlock src='taro/demo6.tsx'></CodeBlock>

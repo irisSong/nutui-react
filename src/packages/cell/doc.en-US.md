@@ -1,16 +1,16 @@
-# Cell
+# Cell cell
 
-The cell is a single display item in the list.
+List items can form a list.
 
-## Import
+## Introduction
 
 ```tsx
 import { Cell } from '@nutui/nutui-react'
 ```
 
-## Demo
+## Sample code
 
-### Basic Usage
+### Basic usage
 
 :::demo
 
@@ -18,7 +18,7 @@ import { Cell } from '@nutui/nutui-react'
 
 :::
 
-### Customize Content
+### Custom content
 
 :::demo
 
@@ -26,7 +26,15 @@ import { Cell } from '@nutui/nutui-react'
 
 :::
 
-### Customize the title area
+### Volume Crystal Lake County
+
+:::demo
+
+<CodeBlock src='h5/demo22.tsx'></CodeBlock>
+
+:::
+
+### Custom title area
 
 :::demo
 
@@ -42,9 +50,9 @@ import { Cell } from '@nutui/nutui-react'
 
 :::
 
-### Vertical Center
+### Vertically centered
 
-You can align the left and right contents of the cell vertically through the 'center' attribute.
+The left and right contents of the Cell can be vertically centered through the `align` attribute.
 
 :::demo
 
@@ -52,7 +60,9 @@ You can align the left and right contents of the cell vertically through the 'ce
 
 :::
 
-### Link | Cell.Group Usage
+### Link | Group Usage
+
+Use `nut-cell-group` to support `title` and `description`
 
 :::demo
 
@@ -60,9 +70,9 @@ You can align the left and right contents of the cell vertically through the 'ce
 
 :::
 
-### Grouping usage
+### Group usage
 
-The 'divider' property allows you to keep the lower edge from being displayed between cells.
+You can use the `divider` attribute to prevent the bottom lines between cells from displaying.
 
 :::demo
 
@@ -74,55 +84,55 @@ The 'divider' property allows you to keep the lower edge from being displayed be
 
 ### Props
 
-| Property | Description | Type | Default |
+| Properties | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| title | Title | `ReactNode` | `-` |
-| description | ReactNode | `string` | `-` |
-| divider | Whether there are dividers between cells | `boolean` | `true` |
+| title | Group title | `ReactNode` | `-` |
+| description | Group description | `ReactNode` | `-` |
+| divider | Whether there is a dividing line between cells | `boolean` | `true` |
 
 ## Cell
 
 ### Props
 
-| Property | Description | Type | Default |
+| Properties | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| title | Title | `ReactNode` | `-` |
-| description | Description | `ReactNode` | `-` |
-| extra | Extra | `ReactNode` | `-` |
-| radius | Corner radius | `string` | `6px` |
-| align | Alignment in the vertical direction | `flex-start` \| `center` \| `flex-end` | `flex-start` |
+| title | title | `ReactNode` | `-` |
+| description | description | `ReactNode` | `-` |
+| extra | Description on the right | `ReactNode` | `-` |
+| radius | corner radius | `string` | `6px` |
+| align | Alignment along the vertical axis | `flex-start` \| `center` \| `flex-end` | `flex-start` |
 | clickable | click style feedback | `boolean` | `false` |
-| onClick | Emitted when cell is clicked | `onClick: (event: React.MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => void` | `false` |
+| onClick | Click event | `onClick: (event: React.MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => void` | `false` |
 
-## Theming
+## Theme customization
 
-### CSS Variables
+### Style variables
 
-The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/component/configprovider).
+The component provides the following CSS variables, which can be used to customize styles. For usage methods, please refer to [ConfigProvider component](#/zh-CN/component/configprovider).
 
-| Name | Description | Default |
+| name | description | default value |
 | --- | --- | --- |
-| \--nutui-cell-title-color | The cell title the font color | `$color-title` |
-| \--nutui-cell-title-font-size | The cell title the font size | `$font-size-base` |
-| \--nutui-cell-description-color | The cell describes the font color | `$color-text` |
-| \--nutui-cell-description-font-size | The cell describes the font size | `$font-size-s` |
-| \--nutui-cell-extra-color | The right side of the cell describes the font color | `$color-text` |
-| \--nutui-cell-extra-font-size | The right side of the cell describes the font size | `$font-size-base` |
-| \--nutui-cell-border-radius | The rounded corner size of the cell | `6px` |
-| \--nutui-cell-padding | Inside margins of cells | `13px 16px` |
-| \--nutui-cell-line-height | The row height of the cell | `20px` |
-| \--nutui-cell-divider-left | Left margin of cell divider | `16px` |
-| \--nutui-cell-divider-right | ArrowRight margin of cell divider | `16px` |
-| \--nutui-cell-divider-border-bottom | Border bottom of cell divider | `1px solid #f5f6f7` |
-| \--nutui-cell-background-color | The background color of the cell | `$white` |
-| \--nutui-cell-box-shadow | The shadow of the cell | `0px 1px 7px 0px rgba(237, 238, 241, 1)` |
-| \--nutui-cell-group-title-padding | The padding of the title of the cell group | `0 10px` |
+| \--nutui-cell-title-color | Cell title font color | `$color-title` |
+| \--nutui-cell-title-font-size | Cell title font size | `$font-size-base` |
+| \--nutui-cell-description-color | Cell description font color | `$color-text` |
+| \--nutui-cell-description-font-size | Cell description font size | `$font-size-s` |
+| \--nutui-cell-extra-color | The font color described on the right side of the cell | `$color-text` |
+| \--nutui-cell-extra-font-size | Description font size on the right side of the cell | `$font-size-base` |
+| \--nutui-cell-border-radius | Cell fillet size | `6px` |
+| \--nutui-cell-padding | Cell padding | `13px 16px` |
+| \--nutui-cell-line-height | Cell line height | `20px` |
+| \--nutui-cell-divider-left | Cell dividing line left margin | `16px` |
+| \--nutui-cell-divider-right | Right margin of cell dividing line | `16px` |
+| \--nutui-cell-divider-border-bottom | Cell divider line bottom border | `1px solid #f5f6f7` |
+| \--nutui-cell-background-color | Cell background color | `$white` |
+| \--nutui-cell-box-shadow | Cell shadow | `0px 1px 7px 0px rgba(237, 238, 241, 1)` |
+| \--nutui-cell-group-title-padding | Title padding of cell group | `0 10px` |
 | \--nutui-cell-group-title-color | The title font color of the cell group | `#909ca4` |
 | \--nutui-cell-group-title-font-size | The title font size of the cell group | `$font-size-base` |
-| \--nutui-cell-group-title-line-height | The title row height of the cell group | `20px` |
-| \--nutui-cell-group-description-padding | The description padding for cell groups | `0 10px` |
-| \--nutui-cell-group-description-color | The description color of the cell group | `#909ca4` |
-| \--nutui-cell-group-description-font-size | The description font size of the cell group | `$font-size-s` |
-| \--nutui-cell-group-description-line-height | The description row height of cell group | `16px` |
-| \--nutui-cell-group-background-color | The background color of the cell group | `$white` |
-| \--nutui-cell-group-wrap-margin | The margin of the cell group wrap | `10px` |
+| \--nutui-cell-group-title-line-height | The title line height of the cell group | `20px` |
+| \--nutui-cell-group-description-padding | Description padding of cell group | `0 10px` |
+| \--nutui-cell-group-description-color | Description color of cell group | `#909ca4` |
+| \--nutui-cell-group-description-font-size | Description font size of cell group | `$font-size-s` |
+| \--nutui-cell-group-description-line-height | Description line height of cell group | `16px` |
+| \--nutui-cell-group-background-color | Background color of cell group | `$white` |
+| \--nutui-cell-group-wrap-margin | The margin of the cell group container | `10px` |

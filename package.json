@@ -223,7 +223,8 @@
     "vite-plugin-dts": "4.2.1",
     "vitest": "^2.0.4",
     "vitest-canvas-mock": "^0.3.3",
-    "yargs": "^17.7.2"
+    "yargs": "^17.7.2",
+    "@vitalets/google-translate-api":"9.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
