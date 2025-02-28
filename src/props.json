@@ -214,7 +214,10 @@
         {
           "name": "shape",
           "desc": "",
-          "type": "AvatarShape",
+          "type": [
+            "round",
+            "square"
+          ],
           "default": ""
         },
         {
@@ -279,7 +282,10 @@
         {
           "name": "toolbarPosition",
           "desc": "",
-          "type": "AvatarCropperToolbarPosition",
+          "type": [
+            "top",
+            "bottom"
+          ],
           "default": ""
         },
         {
@@ -294,7 +300,10 @@
         {
           "name": "shape",
           "desc": "",
-          "type": "AvatarCropperShape",
+          "type": [
+            "square",
+            "round"
+          ],
           "default": ""
         }
       ]
@@ -447,25 +456,46 @@
         {
           "name": "shape",
           "desc": "",
-          "type": "ButtonShape",
+          "type": [
+            "square",
+            "round"
+          ],
           "default": ""
         },
         {
           "name": "type",
           "desc": "",
-          "type": "ButtonType",
+          "type": [
+            "default",
+            "primary",
+            "info",
+            "success",
+            "warning",
+            "danger"
+          ],
           "default": ""
         },
         {
           "name": "size",
           "desc": "",
-          "type": "ButtonSize",
+          "type": [
+            "xlarge",
+            "large",
+            "normal",
+            "small",
+            "mini"
+          ],
           "default": ""
         },
         {
           "name": "fill",
           "desc": "",
-          "type": "ButtonFill",
+          "type": [
+            "solid",
+            "outline",
+            "dashed",
+            "none"
+          ],
           "default": ""
         },
         {
@@ -1082,7 +1112,10 @@
         {
           "name": "shape",
           "desc": "",
-          "type": "CheckboxShape",
+          "type": [
+            "button",
+            "round"
+          ],
           "default": ""
         },
         {
@@ -1311,13 +1344,19 @@
         {
           "name": "activeName",
           "desc": "",
-          "type": "CollapseActiveName",
+          "type": [
+            "Array<string>",
+            "string"
+          ],
           "default": ""
         },
         {
           "name": "defaultActiveName",
           "desc": "",
-          "type": "CollapseActiveName",
+          "type": [
+            "Array<string>",
+            "string"
+          ],
           "default": ""
         },
         {
@@ -1393,7 +1432,11 @@
         {
           "name": "direction",
           "desc": "",
-          "type": "ConfigProviderDirection",
+          "type": [
+            "ltr",
+            "rtl",
+            "undefined"
+          ],
           "default": ""
         },
         {
@@ -1410,13 +1453,20 @@
         {
           "name": "contentPosition",
           "desc": "",
-          "type": "DividerContentPosition",
+          "type": [
+            "left",
+            "center",
+            "right"
+          ],
           "default": ""
         },
         {
           "name": "direction",
           "desc": "",
-          "type": "DividerDirection",
+          "type": [
+            "horizontal",
+            "vertical"
+          ],
           "default": ""
         }
       ]
@@ -1511,7 +1561,11 @@
         {
           "name": "direction",
           "desc": "",
-          "type": "EllipsisDirection",
+          "type": [
+            "start",
+            "end",
+            "middle"
+          ],
           "default": ""
         },
         {
@@ -1699,7 +1753,15 @@
         {
           "name": "errorMessageAlign",
           "desc": "",
-          "type": "TextAlign",
+          "type": [
+            "start",
+            "end",
+            "left",
+            "right",
+            "center",
+            "justify",
+            "match-parent"
+          ],
           "default": ""
         },
         {
@@ -1786,7 +1848,10 @@
         {
           "name": "direction",
           "desc": "",
-          "type": "GridDirection",
+          "type": [
+            "horizontal",
+            "vertical"
+          ],
           "default": ""
         },
         {
@@ -1860,7 +1925,10 @@
         {
           "name": "direction",
           "desc": "",
-          "type": "GridDirection",
+          "type": [
+            "horizontal",
+            "vertical"
+          ],
           "default": ""
         }
       ]
@@ -2057,7 +2125,11 @@
         {
           "name": "closeIconPosition",
           "desc": "",
-          "type": "ImagePreviewCloseIconPosition",
+          "type": [
+            "top-right",
+            "top-left",
+            "bottom"
+          ],
           "default": ""
         }
       ]
@@ -2086,13 +2158,19 @@
         {
           "name": "color",
           "desc": "",
-          "type": "IndicatorColor",
+          "type": [
+            "primary",
+            "white"
+          ],
           "default": ""
         },
         {
           "name": "type",
           "desc": "",
-          "type": "IndicatorType",
+          "type": [
+            "anchor",
+            "slide"
+          ],
           "default": ""
         }
       ]
@@ -2192,7 +2270,11 @@
         {
           "name": "align",
           "desc": "",
-          "type": "InputAlign",
+          "type": [
+            "left",
+            "center",
+            "right"
+          ],
           "default": ""
         },
         {
@@ -2228,7 +2310,10 @@
         {
           "name": "formatTrigger",
           "desc": "",
-          "type": "InputFormatTrigger",
+          "type": [
+            "onChange",
+            "onBlur"
+          ],
           "default": ""
         },
         {
@@ -2240,7 +2325,13 @@
         {
           "name": "confirmType",
           "desc": "",
-          "type": "InputConfirmType",
+          "type": [
+            "send",
+            "search",
+            "next",
+            "go",
+            "done"
+          ],
           "default": ""
         },
         {
@@ -3519,7 +3610,10 @@
         {
           "name": "type",
           "desc": "",
-          "type": "SignatureType",
+          "type": [
+            "jpg",
+            "png"
+          ],
           "default": ""
         },
         {
@@ -3584,7 +3678,10 @@
         {
           "name": "avatarShape",
           "desc": "",
-          "type": "avatarShape",
+          "type": [
+            "round",
+            "square"
+          ],
           "default": ""
         }
       ]
@@ -4096,7 +4193,14 @@
         {
           "name": "type",
           "desc": "",
-          "type": "TagType",
+          "type": [
+            "default",
+            "primary",
+            "info",
+            "success",
+            "warning",
+            "danger"
+          ],
           "default": ""
         },
         {
@@ -4299,7 +4403,10 @@
         {
           "name": "type",
           "desc": "",
-          "type": "TourType",
+          "type": [
+            "step",
+            "tile"
+          ],
           "default": ""
         },
         {

@@ -20,6 +20,23 @@ interface PackageDef {
   components: ComponentDef[]
 }
 
+// 存储类型别名的映射
+const typeAliasMap = new Map<string, string[]>()
+
+function findTypeAlias(node: ts.Node, sourceFile: ts.SourceFile) {
+  if (ts.isTypeAliasDeclaration(node)) {
+    const aliasName = node.name.getText(sourceFile)
+    const type = node.type
+
+    if (ts.isUnionTypeNode(type)) {
+      const values = type.types.map((t) => t.getText(sourceFile).replace(/['"]/g, ''))
+      typeAliasMap.set(aliasName, values)
+    }
+  }
+
+  ts.forEachChild(node, (child) => findTypeAlias(child, sourceFile))
+}
+
 function normalizeType(type: ts.TypeNode, sourceFile: ts.SourceFile): string | string[] {
   if (ts.isUnionTypeNode(type)) {
     return type.types.map((t) => normalizeType(t, sourceFile)).flat()
@@ -30,6 +47,14 @@ function normalizeType(type: ts.TypeNode, sourceFile: ts.SourceFile): string | s
   // Handle React.ReactNode and ReactNode
   if (typeText.includes('ReactNode')) {
     return 'node'
+  }
+
+  // Handle type aliases
+  if (ts.isTypeReferenceNode(type)) {
+    const typeName = type.typeName.getText(sourceFile)
+    if (typeAliasMap.has(typeName)) {
+      return typeAliasMap.get(typeName) || []
+    }
   }
 
   // Handle basic types
@@ -69,6 +94,10 @@ function extractPropsFromFile(filePath: string): ComponentDef | null {
     ts.ScriptTarget.Latest,
     true
   )
+
+  // 首先扫描并收集所有类型别名
+  typeAliasMap.clear() // 清除之前的类型别名
+  findTypeAlias(sourceFile, sourceFile)
 
   let componentName = ''
   let propsInterface: PropType[] = []
