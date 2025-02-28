@@ -1,45 +1,42 @@
-import { RefObject } from 'react'
-import { PopupProps } from '../popup/types'
+import { PopupProps } from '@/packages/popup/types'
 import { BasicComponent } from '@/utils/typings'
+import {
+  PickerOnChangeCallbackParameter,
+  PickerOption,
+  PickerOptions,
+  PickerValue,
+} from '@/packages/pickerview/types'
 
-export interface PickerOption {
-  text: string | number
-  value: string | number
-  disabled?: boolean
-  children?: PickerOption[]
-  className?: string | number
+export type PickerRef = PickerActions
+export type PickerActions = {
+  open: () => void
+  close: () => void
 }
+export type ColumnsType = 'single' | 'multiple' | 'cascade'
 
 export interface PickerProps extends Omit<BasicComponent, 'children'> {
   visible?: boolean | undefined
   title?: string
-  options: (PickerOption | PickerOption[])[]
-  value?: (number | string)[]
-  defaultValue?: (number | string)[]
+  options: PickerOptions[]
+  value?: PickerValue[]
+  defaultValue?: PickerValue[]
   threeDimensional?: boolean
   duration: number | string
   closeOnOverlayClick: boolean
+  renderLabel?: (item: PickerOption) => React.ReactNode
+
   popupProps: Partial<
     Omit<PopupProps, 'title' | 'onClose' | 'closeOnOverlayClick'>
   >
   onConfirm?: (
-    selectedOptions: PickerOption[],
-    selectedValue: (string | number)[]
+    selectedOptions: PickerOptions,
+    selectedValue: PickerValue[]
   ) => void
   onCancel?: () => void
   onClose?: (
-    selectedOptions: PickerOption[],
-    selectedValue: (string | number)[]
+    selectedOptions: PickerOptions,
+    selectedValue: PickerValue[]
   ) => void
-  afterClose?: (
-    selectedOptions: PickerOption[],
-    selectedValue: (string | number)[],
-    pickerRef: RefObject<HTMLDivElement>
-  ) => void
-  onChange?: (
-    selectedOptions: PickerOption[],
-    selectedValue: (string | number)[],
-    columnIndex: number
-  ) => void
+  onChange?: (args0: PickerOnChangeCallbackParameter) => void
   children?: any
 }
