@@ -1,0 +1,16 @@
+{
+    "name": "nutui-props-generator",
+    "version": "1.0.0",
+    "description": "Generate props documentation for NutUI components",
+    "main": "generate-props-json.ts",
+    "scripts": {
+        "generate": "ts-node generate-props-json.ts"
+    },
+    "dependencies": {
+        "typescript": "^4.9.5"
+    },
+    "devDependencies": {
+        "@types/node": "^18.15.0",
+        "ts-node": "^10.9.1"
+    }
+}
