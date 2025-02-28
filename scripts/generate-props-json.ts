@@ -20,6 +20,47 @@ interface PackageDef {
   components: ComponentDef[]
 }
 
+function normalizeType(type: ts.TypeNode, sourceFile: ts.SourceFile): string | string[] {
+  if (ts.isUnionTypeNode(type)) {
+    return type.types.map((t) => normalizeType(t, sourceFile)).flat()
+  }
+
+  const typeText = type.getText(sourceFile)
+
+  // Handle React.ReactNode and ReactNode
+  if (typeText.includes('ReactNode')) {
+    return 'node'
+  }
+
+  // Handle basic types
+  switch (typeText) {
+    case 'string':
+    case 'number':
+    case 'boolean':
+      return typeText
+    default:
+      // Remove quotes from string literals
+      return typeText.replace(/['"]/g, '')
+  }
+}
+
+function isEventProp(member: ts.PropertySignature): boolean {
+  // Check if it's an event handler (starts with 'on' and is a function type)
+  const name = member.name.getText()
+  const isEventName = name.startsWith('on') && name.length > 2 && 
+                     name[2] === name[2].toUpperCase() // Checks if third character is uppercase
+  
+  const type = member.type
+  if (!type) return false
+
+  const isFunction = 
+    ts.isFunctionTypeNode(type) || 
+    (ts.isTypeReferenceNode(type) && type.getText().includes('Function')) ||
+    type.getText().includes('=>')
+
+  return isEventName && isFunction
+}
+
 function extractPropsFromFile(filePath: string): ComponentDef | null {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const sourceFile = ts.createSourceFile(
@@ -38,6 +79,11 @@ function extractPropsFromFile(filePath: string): ComponentDef | null {
 
       node.members.forEach((member: ts.TypeElement) => {
         if (ts.isPropertySignature(member)) {
+          // Skip event handlers
+          if (isEventProp(member)) {
+            return
+          }
+
           const propName = member.name.getText(sourceFile)
           const jsDoc = ts.getJSDocTags(member)
           const description =
@@ -48,15 +94,7 @@ function extractPropsFromFile(filePath: string): ComponentDef | null {
           let propType: string | string[] = ''
 
           if (member.type) {
-            if (ts.isUnionTypeNode(member.type)) {
-              propType = member.type.types.map((type: ts.TypeNode) =>
-                type.getText(sourceFile).replace(/['"]/g, '')
-              )
-            } else if (ts.isTypeReferenceNode(member.type)) {
-              propType = member.type.getText(sourceFile)
-            } else {
-              propType = member.type.getText(sourceFile)
-            }
+            propType = normalizeType(member.type, sourceFile)
           }
 
           propsInterface.push({

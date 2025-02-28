@@ -14,7 +14,7 @@
         {
           "name": "description",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -32,19 +32,7 @@
         {
           "name": "cancelText",
           "desc": "",
-          "type": "ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onCancel",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onSelect",
-          "desc": "",
-          "type": "(item: ActionSheetOption<string | boolean>, index: number) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -127,31 +115,19 @@
         {
           "name": "defaultIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "selectIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "backIcon",
           "desc": "",
-          "type": "React.ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onSwitch",
-          "desc": "",
-          "type": "(data: { type: string }) => void",
-          "default": ""
-        },
-        {
-          "name": "onExistSelect",
-          "desc": "",
-          "type": "(data: AddressList) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -175,12 +151,6 @@
           "name": "loop",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void",
           "default": ""
         }
       ]
@@ -223,42 +193,6 @@
           "desc": "",
           "type": "string",
           "default": ""
-        },
-        {
-          "name": "onBack",
-          "desc": "",
-          "type": "(e: HTMLAudioElement) => void",
-          "default": ""
-        },
-        {
-          "name": "onForward",
-          "desc": "",
-          "type": "(e: HTMLAudioElement) => void",
-          "default": ""
-        },
-        {
-          "name": "onPause",
-          "desc": "",
-          "type": "(e: SyntheticEvent<HTMLAudioElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onEnd",
-          "desc": "",
-          "type": "(e: SyntheticEvent<HTMLAudioElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onMute",
-          "desc": "",
-          "type": "(e: HTMLAudioElement) => void",
-          "default": ""
-        },
-        {
-          "name": "onCanPlay",
-          "desc": "",
-          "type": "(e: SyntheticEvent<HTMLAudioElement>) => void",
-          "default": ""
         }
       ]
     },
@@ -274,7 +208,7 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -318,18 +252,6 @@
           "desc": "",
           "type": "string",
           "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(e: MouseEvent<HTMLDivElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onError",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
         }
       ]
     },
@@ -351,7 +273,7 @@
         {
           "name": "toolbar",
           "desc": "",
-          "type": "React.ReactNode[]",
+          "type": "node",
           "default": ""
         },
         {
@@ -364,7 +286,7 @@
           "name": "editText",
           "desc": "",
           "type": [
-            "React.ReactNode",
+            "node",
             "string"
           ],
           "default": ""
@@ -373,18 +295,6 @@
           "name": "shape",
           "desc": "",
           "type": "AvatarCropperShape",
-          "default": ""
-        },
-        {
-          "name": "onConfirm",
-          "desc": "",
-          "type": "(e: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onCancel",
-          "desc": "",
-          "type": "() => void",
           "default": ""
         }
       ]
@@ -480,12 +390,6 @@
           "name": "duration",
           "desc": "",
           "type": "number",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(event: MouseEvent<HTMLDivElement>) => void",
           "default": ""
         }
       ]
@@ -585,13 +489,13 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "rightIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -608,12 +512,6 @@
             "reset",
             "button"
           ],
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(e: MouseEvent<HTMLButtonElement>) => void",
           "default": ""
         }
       ]
@@ -681,19 +579,19 @@
         {
           "name": "startText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "endText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "confirmText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -723,7 +621,7 @@
         {
           "name": "closeIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -760,30 +658,6 @@
           "name": "renderDayBottom",
           "desc": "",
           "type": "(date: CalendarDay) => string | JSX.Element",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onConfirm",
-          "desc": "",
-          "type": "(param: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onDayClick",
-          "desc": "",
-          "type": "(data: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onPageChange",
-          "desc": "",
-          "type": "(param: string) => void",
           "default": ""
         }
       ]
@@ -841,37 +715,19 @@
         {
           "name": "renderDay",
           "desc": "",
-          "type": "(day: CalendarCardDay) => ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "renderDayTop",
           "desc": "",
-          "type": "(day: CalendarCardDay) => ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "renderDayBottom",
           "desc": "",
-          "type": "(day: CalendarCardDay) => ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onDayClick",
-          "desc": "",
-          "type": "(day: CalendarCardDay) => void",
-          "default": ""
-        },
-        {
-          "name": "onPageChange",
-          "desc": "",
-          "type": "(data: CalendarCardMonth) => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: CalendarCardValue) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -936,19 +792,19 @@
         {
           "name": "startText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "endText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "confirmText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1010,30 +866,6 @@
           "desc": "",
           "type": "(date: CalendarDay) => string | JSX.Element",
           "default": ""
-        },
-        {
-          "name": "onConfirm",
-          "desc": "",
-          "type": "(data: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onUpdate",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onDayClick",
-          "desc": "",
-          "type": "(data: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onPageChange",
-          "desc": "",
-          "type": "(data: any) => void",
-          "default": ""
         }
       ]
     },
@@ -1085,25 +917,25 @@
         {
           "name": "description",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "tag",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "priceTag",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "extra",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -1120,7 +952,7 @@
         {
           "name": "popupProps",
           "desc": "",
-          "type": "Partial<\n    Omit<\n      PopupProps,\n      | 'closeIcon'\n      | 'closeable'\n      | 'title'\n      | 'left'\n      | 'closeIconPosition'\n      | 'onClose'\n    >\n  >",
+          "type": "Partial<\n    Omit<\n      PopupProps,\n      | closeIcon\n      | closeable\n      | title\n      | left\n      | closeIconPosition\n      | onClose\n    >\n  >",
           "default": ""
         },
         {
@@ -1186,31 +1018,13 @@
         {
           "name": "closeIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "lazy",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onLoad",
-          "desc": "",
-          "type": "(node: any, resolve: any) => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: CascaderValue, params?: any) => void",
-          "default": ""
-        },
-        {
-          "name": "onPathChange",
-          "desc": "",
-          "type": "(value: CascaderValue, params: any) => void",
           "default": ""
         }
       ]
@@ -1221,19 +1035,19 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "description",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "children",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1280,19 +1094,19 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "activeIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "indeterminateIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1313,13 +1127,7 @@
         {
           "name": "label",
           "desc": "",
-          "type": "ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: boolean) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -1385,18 +1193,6 @@
           "name": "options",
           "desc": "",
           "type": "RadioGroupOption[]",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: string[]) => void",
-          "default": ""
-        },
-        {
-          "name": "onLimit",
-          "desc": "",
-          "type": "(type: CheckboxLimit) => void",
           "default": ""
         }
       ]
@@ -1506,12 +1302,6 @@
           "desc": "",
           "type": "boolean",
           "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(e: MouseEvent<HTMLDivElement>, type: ColEventType) => void",
-          "default": ""
         }
       ]
     },
@@ -1539,19 +1329,13 @@
         {
           "name": "expandIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "rotate",
           "desc": "",
           "type": "number",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(\n    activeName: CollapseActiveName,\n    name: string,\n    isOpen: boolean\n  ) => void",
           "default": ""
         }
       ]
@@ -1562,7 +1346,7 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1574,7 +1358,7 @@
         {
           "name": "expandIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1592,7 +1376,7 @@
         {
           "name": "extra",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -1662,24 +1446,6 @@
           "desc": "",
           "type": "{\n    top: number\n    left: number\n    right: number\n    bottom: number\n  }",
           "default": ""
-        },
-        {
-          "name": "onDragStart",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onDragEnd",
-          "desc": "",
-          "type": "(state: DragState) => void",
-          "default": ""
-        },
-        {
-          "name": "onDrag",
-          "desc": "",
-          "type": "(state: DragState) => void",
-          "default": ""
         }
       ]
     },
@@ -1729,18 +1495,6 @@
           "name": "showKeys",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onItemClick",
-          "desc": "",
-          "type": "(key: string, item: ElevatorData) => void",
-          "default": ""
-        },
-        {
-          "name": "onIndexClick",
-          "desc": "",
-          "type": "(key: string) => void",
           "default": ""
         }
       ]
@@ -1795,18 +1549,6 @@
             "string"
           ],
           "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(type: string) => void",
-          "default": ""
         }
       ]
     },
@@ -1816,7 +1558,7 @@
         {
           "name": "image",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1831,13 +1573,13 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "description",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1873,7 +1615,7 @@
         {
           "name": "footer",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -1918,18 +1660,6 @@
             "right"
           ],
           "default": ""
-        },
-        {
-          "name": "onFinish",
-          "desc": "",
-          "type": "(values: any) => void",
-          "default": ""
-        },
-        {
-          "name": "onFinishFailed",
-          "desc": "",
-          "type": "(values: any, errorFields: any) => void",
-          "default": ""
         }
       ]
     },
@@ -1967,12 +1697,6 @@
           "default": ""
         },
         {
-          "name": "onClick",
-          "desc": "",
-          "type": "(\n    event: React.MouseEvent,\n    componentRef: React.MutableRefObject<any>\n  ) => void",
-          "default": ""
-        },
-        {
           "name": "errorMessageAlign",
           "desc": "",
           "type": "TextAlign",
@@ -2003,8 +1727,8 @@
           "name": "children",
           "desc": "",
           "type": [
-            "ReactNode",
-            "((obj: any) => React.ReactNode)"
+            "node",
+            "node"
           ],
           "default": ""
         },
@@ -2076,12 +1800,6 @@
           "desc": "",
           "type": "CSSProperties",
           "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(item: GridItemProps, index: number) => void",
-          "default": ""
         }
       ]
     },
@@ -2093,7 +1811,7 @@
           "desc": "",
           "type": [
             "string",
-            "ReactNode"
+            "node"
           ],
           "default": ""
         },
@@ -2182,13 +1900,7 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "React.ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -2246,7 +1958,7 @@
           "desc": "",
           "type": [
             "boolean",
-            "ReactNode"
+            "node"
           ],
           "default": ""
         },
@@ -2255,7 +1967,7 @@
           "desc": "",
           "type": [
             "boolean",
-            "ReactNode"
+            "node"
           ],
           "default": ""
         },
@@ -2263,24 +1975,6 @@
           "name": "lazy",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(e: MouseEvent) => void",
-          "default": ""
-        },
-        {
-          "name": "onLoad",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onError",
-          "desc": "",
-          "type": "() => void",
           "default": ""
         }
       ]
@@ -2356,7 +2050,7 @@
           "desc": "",
           "type": [
             "boolean",
-            "ReactNode"
+            "node"
           ],
           "default": ""
         },
@@ -2364,18 +2058,6 @@
           "name": "closeIconPosition",
           "desc": "",
           "type": "ImagePreviewCloseIconPosition",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: number) => void",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "() => void",
           "default": ""
         }
       ]
@@ -2457,37 +2139,19 @@
         {
           "name": "pullingText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "loadingText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "loadMoreText",
           "desc": "",
-          "type": "ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onRefresh",
-          "desc": "",
-          "type": "() => Promise<void>",
-          "default": ""
-        },
-        {
-          "name": "onLoadMore",
-          "desc": "",
-          "type": "() => Promise<void>",
-          "default": ""
-        },
-        {
-          "name": "onScroll",
-          "desc": "",
-          "type": "(param: number) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -2558,7 +2222,7 @@
         {
           "name": "clearIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -2589,36 +2253,6 @@
           "name": "formatter",
           "desc": "",
           "type": "(value: string) => string",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onBlur",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onFocus",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onClear",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(event: MouseEvent<HTMLDivElement>) => void",
           "default": ""
         }
       ]
@@ -2709,42 +2343,6 @@
           "desc": "",
           "type": "(value?: string | number) => string",
           "default": ""
-        },
-        {
-          "name": "onPlus",
-          "desc": "",
-          "type": "(e: React.MouseEvent) => void",
-          "default": ""
-        },
-        {
-          "name": "onMinus",
-          "desc": "",
-          "type": "(e: React.MouseEvent) => void",
-          "default": ""
-        },
-        {
-          "name": "onOverlimit",
-          "desc": "",
-          "type": "(e: React.MouseEvent | ChangeEvent<HTMLInputElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onBlur",
-          "desc": "",
-          "type": "(e: React.FocusEvent<HTMLInputElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onFocus",
-          "desc": "",
-          "type": "(e: React.FocusEvent<HTMLInputElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(\n    param: string | number,\n    e: React.MouseEvent | ChangeEvent<HTMLInputElement>\n  ) => void",
-          "default": ""
         }
       ]
     },
@@ -2788,25 +2386,13 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "children",
           "desc": "",
-          "type": "React.ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onOpen",
-          "desc": "",
-          "type": "MenuCallBackFunction",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "MenuCallBackFunction",
+          "type": "node",
           "default": ""
         }
       ]
@@ -2817,13 +2403,13 @@
         {
           "name": "title",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "titleIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -2847,7 +2433,7 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -2893,15 +2479,9 @@
           "default": ""
         },
         {
-          "name": "onChange",
-          "desc": "",
-          "type": "(event: any) => void",
-          "default": ""
-        },
-        {
           "name": "children",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -2912,25 +2492,25 @@
         {
           "name": "left",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "back",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "right",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "title",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -2961,15 +2541,9 @@
           "default": ""
         },
         {
-          "name": "onBackClick",
-          "desc": "",
-          "type": "(e: React.MouseEvent<HTMLElement>) => void",
-          "default": ""
-        },
-        {
           "name": "children",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -3028,19 +2602,19 @@
         {
           "name": "leftIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "rightIcon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "right",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -3078,24 +2652,6 @@
           "desc": "",
           "type": "(event: any) => void",
           "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "(event: any) => void",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(event: any) => void",
-          "default": ""
-        },
-        {
-          "name": "onItemClick",
-          "desc": "",
-          "type": "(event: any, value: any) => void",
-          "default": ""
         }
       ]
     },
@@ -3125,18 +2681,6 @@
           "desc": "",
           "type": "string",
           "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
         }
       ]
     },
@@ -3152,7 +2696,7 @@
         {
           "name": "rightActions",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -3180,30 +2724,6 @@
           "name": "random",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onDelete",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onConfirm",
-          "desc": "",
-          "type": "() => void",
           "default": ""
         }
       ]
@@ -3236,13 +2756,13 @@
         {
           "name": "prev",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "next",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -3272,13 +2792,7 @@
         {
           "name": "itemRender",
           "desc": "",
-          "type": "(page: any, index: number) => ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(currPage: number) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -3352,31 +2866,7 @@
         {
           "name": "children",
           "desc": "",
-          "type": "React.ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onOpen",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onSelect",
-          "desc": "",
-          "type": "(item: PopoverList, index: number) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -3438,12 +2928,6 @@
       "name": "Pulltorefresh",
       "props": [
         {
-          "name": "onRefresh",
-          "desc": "",
-          "type": "() => Promise<any>",
-          "default": ""
-        },
-        {
           "name": "type",
           "desc": "",
           "type": "PullToRefreshType",
@@ -3452,25 +2936,25 @@
         {
           "name": "pullingText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "canReleaseText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "refreshingText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "completeText",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -3500,13 +2984,13 @@
         {
           "name": "renderIcon",
           "desc": "",
-          "type": "(status: PullStatus) => ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "renderText",
           "desc": "",
-          "type": "(status: PullStatus) => ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -3547,13 +3031,13 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "activeIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -3563,12 +3047,6 @@
             "string",
             "number"
           ],
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(checked: boolean) => void",
           "default": ""
         }
       ]
@@ -3623,12 +3101,6 @@
           "desc": "",
           "type": "RadioGroupOption[]",
           "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: string | number) => void",
-          "default": ""
         }
       ]
     },
@@ -3680,19 +3152,19 @@
         {
           "name": "minDescription",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "maxDescription",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "button",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -3705,7 +3177,7 @@
           "name": "marks",
           "desc": "",
           "type": [
-            "Record<string, ReactNode>",
+            "node",
             "RangeMark[]"
           ],
           "default": ""
@@ -3714,27 +3186,9 @@
           "name": "currentDescription",
           "desc": "",
           "type": [
-            "((value: RangeValue) => ReactNode)",
+            "node",
             "null"
           ],
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: RangeValue) => void",
-          "default": ""
-        },
-        {
-          "name": "onStart",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onEnd",
-          "desc": "",
-          "type": "(value: RangeValue) => void",
           "default": ""
         }
       ]
@@ -3745,19 +3199,19 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "description",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "icon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -3808,12 +3262,6 @@
             "string",
             "number"
           ],
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(e: MouseEvent<HTMLDivElement>, type: RowEventType) => void",
           "default": ""
         }
       ]
@@ -3898,61 +3346,25 @@
         {
           "name": "left",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "right",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "leftIn",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "rightIn",
           "desc": "",
-          "type": "React.ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onSearch",
-          "desc": "",
-          "type": "(val: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: string, event?: ChangeEvent<HTMLInputElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onFocus",
-          "desc": "",
-          "type": "(value: string, event: FocusEvent<HTMLInputElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onBlur",
-          "desc": "",
-          "type": "(value: string, event: FocusEvent<HTMLInputElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onClear",
-          "desc": "",
-          "type": "(event: MouseEvent<HTMLDivElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onInputClick",
-          "desc": "",
-          "type": "(event: MouseEvent<HTMLInputElement>) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -3981,19 +3393,19 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "description",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "tips",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -4011,55 +3423,13 @@
         {
           "name": "error",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "autoFocus",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onFocus",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onConfirm",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onCancel",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onTips",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
-        },
-        {
-          "name": "onComplete",
-          "desc": "",
-          "type": "(value: string) => void",
           "default": ""
         }
       ]
@@ -4100,7 +3470,7 @@
         {
           "name": "children",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -4111,7 +3481,7 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -4140,12 +3510,6 @@
             "right"
           ],
           "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "() => void",
-          "default": ""
         }
       ]
     },
@@ -4173,19 +3537,7 @@
         {
           "name": "unsupported",
           "desc": "",
-          "type": "ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onConfirm",
-          "desc": "",
-          "type": "(\n    canvas: HTMLCanvasElement,\n    dataurl: string,\n    isSigned?: boolean\n  ) => void",
-          "default": ""
-        },
-        {
-          "name": "onClear",
-          "desc": "",
-          "type": "() => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -4288,13 +3640,13 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "description",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -4306,7 +3658,7 @@
         {
           "name": "icon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -4330,12 +3682,6 @@
           "name": "dot",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onStepClick",
-          "desc": "",
-          "type": "(index: number) => void",
           "default": ""
         }
       ]
@@ -4369,12 +3715,6 @@
           "desc": "",
           "type": "number",
           "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(val: boolean) => void",
-          "default": ""
         }
       ]
     },
@@ -4393,13 +3733,13 @@
         {
           "name": "leftAction",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "rightAction",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -4412,42 +3752,6 @@
           "name": "disabled",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onOpen",
-          "desc": "",
-          "type": "({\n    name,\n    position,\n  }: {\n    name: string | number\n    position: SwipeSide\n  }) => void",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "({\n    name,\n    position,\n  }: {\n    name: string | number\n    position: SwipeSide\n  }) => void",
-          "default": ""
-        },
-        {
-          "name": "onActionClick",
-          "desc": "",
-          "type": "(\n    event: MouseEvent<HTMLDivElement>,\n    position: SwipeSide\n  ) => void",
-          "default": ""
-        },
-        {
-          "name": "onTouchStart",
-          "desc": "",
-          "type": "(event: TouchEvent<HTMLDivElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onTouchEnd",
-          "desc": "",
-          "type": "(event: TouchEvent<HTMLDivElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onTouchMove",
-          "desc": "",
-          "type": "(event: TouchEvent<HTMLDivElement>) => void",
           "default": ""
         }
       ]
@@ -4467,7 +3771,7 @@
         {
           "name": "indicator",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -4520,23 +3824,6 @@
           "desc": "",
           "type": "number",
           "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(index: number) => void",
-          "default": ""
-        }
-      ]
-    },
-    {
-      "name": "Swiperitem",
-      "props": [
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void",
-          "default": ""
         }
       ]
     },
@@ -4564,19 +3851,13 @@
         {
           "name": "activeText",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "inactiveText",
           "desc": "",
-          "type": "React.ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(val: boolean, event: React.MouseEvent) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -4619,12 +3900,6 @@
           "desc": "",
           "type": "boolean",
           "default": ""
-        },
-        {
-          "name": "onSwitch",
-          "desc": "",
-          "type": "(value: number) => void",
-          "default": ""
         }
       ]
     },
@@ -4634,19 +3909,19 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "icon",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "value",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -4717,7 +3992,7 @@
         {
           "name": "children",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -4802,18 +4077,6 @@
           "default": ""
         },
         {
-          "name": "onChange",
-          "desc": "",
-          "type": "(index: string | number) => void",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(index: string | number) => void",
-          "default": ""
-        },
-        {
           "name": "autoHeight",
           "desc": "",
           "type": "boolean",
@@ -4822,7 +4085,7 @@
         {
           "name": "children",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -4875,19 +4138,7 @@
         {
           "name": "closeIcon",
           "desc": "",
-          "type": "ReactNode",
-          "default": ""
-        },
-        {
-          "name": "onClick",
-          "desc": "",
-          "type": "(e: MouseEvent<HTMLDivElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "(e?: any) => void",
+          "type": "node",
           "default": ""
         }
       ]
@@ -4963,24 +4214,6 @@
             "default"
           ],
           "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: string) => void",
-          "default": ""
-        },
-        {
-          "name": "onBlur",
-          "desc": "",
-          "type": "(event: FocusEvent<HTMLTextAreaElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onFocus",
-          "desc": "",
-          "type": "(event: FocusEvent<HTMLTextAreaElement>) => void",
-          "default": ""
         }
       ]
     },
@@ -5010,12 +4243,6 @@
           "desc": "",
           "type": "OptionKeyType",
           "default": ""
-        },
-        {
-          "name": "onSelect",
-          "desc": "",
-          "type": "(time: TimeType) => void",
-          "default": ""
         }
       ]
     },
@@ -5037,7 +4264,7 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -5056,24 +4283,6 @@
           "name": "optionKey",
           "desc": "",
           "type": "OptionKeyType",
-          "default": ""
-        },
-        {
-          "name": "onSelect",
-          "desc": "",
-          "type": "(value: DateType[]) => void",
-          "default": ""
-        },
-        {
-          "name": "onDateChange",
-          "desc": "",
-          "type": "(date: DateType, value: DateType[]) => void",
-          "default": ""
-        },
-        {
-          "name": "onTimeChange",
-          "desc": "",
-          "type": "(time: TimeType, value: DateType[]) => void",
           "default": ""
         }
       ]
@@ -5138,25 +4347,25 @@
         {
           "name": "title",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "next",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "prev",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "complete",
           "desc": "",
-          "type": "ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -5169,18 +4378,6 @@
           "name": "closeOnOverlayClick",
           "desc": "",
           "type": "boolean",
-          "default": ""
-        },
-        {
-          "name": "onClose",
-          "desc": "",
-          "type": "(e: MouseEvent<HTMLDivElement>) => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(value: number) => void",
           "default": ""
         }
       ]
@@ -5245,13 +4442,13 @@
         {
           "name": "riseIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "dropIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         }
       ]
@@ -5316,19 +4513,19 @@
         {
           "name": "uploadIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "deleteIcon",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
           "name": "uploadLabel",
           "desc": "",
-          "type": "React.ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -5408,30 +4605,6 @@
           "default": ""
         },
         {
-          "name": "onDelete",
-          "desc": "",
-          "type": "(file: FileItem, files: FileItem[]) => void",
-          "default": ""
-        },
-        {
-          "name": "onOversize",
-          "desc": "",
-          "type": "(files: File[]) => void",
-          "default": ""
-        },
-        {
-          "name": "onOverCount",
-          "desc": "",
-          "type": "(count: number) => void",
-          "default": ""
-        },
-        {
-          "name": "onChange",
-          "desc": "",
-          "type": "(files: FileItem[]) => void",
-          "default": ""
-        },
-        {
           "name": "beforeUpload",
           "desc": "",
           "type": "(files: File[]) => Promise<File[]>",
@@ -5441,18 +4614,6 @@
           "name": "beforeDelete",
           "desc": "",
           "type": "(file: FileItem, files: FileItem[]) => boolean",
-          "default": ""
-        },
-        {
-          "name": "onFileItemClick",
-          "desc": "",
-          "type": "(file: FileItem, index: number) => void",
-          "default": ""
-        },
-        {
-          "name": "onUploadQueueChange",
-          "desc": "",
-          "type": "(tasks: FileItem[]) => void",
           "default": ""
         }
       ]
@@ -5470,24 +4631,6 @@
           "name": "options",
           "desc": "",
           "type": "{\n    controls?: boolean\n    muted?: boolean\n    autoplay?: boolean\n    poster?: string\n    playsinline?: boolean\n    loop?: boolean\n  }",
-          "default": ""
-        },
-        {
-          "name": "onPlay",
-          "desc": "",
-          "type": "(element: HTMLVideoElement) => void",
-          "default": ""
-        },
-        {
-          "name": "onPause",
-          "desc": "",
-          "type": "(element: HTMLVideoElement) => void",
-          "default": ""
-        },
-        {
-          "name": "onPlayEnd",
-          "desc": "",
-          "type": "(element: HTMLVideoElement) => void",
           "default": ""
         }
       ]
@@ -5510,7 +4653,7 @@
         {
           "name": "itemRender",
           "desc": "",
-          "type": "(data: any, dataIndex: number, index: number) => ReactNode",
+          "type": "node",
           "default": ""
         },
         {
@@ -5538,12 +4681,6 @@
           "name": "overscan",
           "desc": "",
           "type": "number",
-          "default": ""
-        },
-        {
-          "name": "onScroll",
-          "desc": "",
-          "type": "() => void",
           "default": ""
         },
         {
