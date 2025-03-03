@@ -496,6 +496,7 @@
           "show": true,
           "taro": true,
           "author": "yangxiaolu",
+          "v15": true,
           "dd": false
         },
         {
@@ -594,6 +595,7 @@
           "show": true,
           "taro": true,
           "author": "hanyuxinting",
+          "v15": true,
           "dd": false
         },
         {
@@ -664,6 +666,7 @@
           "show": true,
           "taro": true,
           "author": "oasis-cloud",
+          "v15": true,
           "dd": false
         },
         {
@@ -776,6 +779,7 @@
           "sort": 16,
           "show": true,
           "taro": true,
+          "v15": true,
           "author": "Ymm0008",
           "dd": true
         },
@@ -857,6 +861,7 @@
           "show": true,
           "taro": true,
           "author": "dsj",
+          "v15": true,
           "dd": true
         },
         {
@@ -959,6 +964,7 @@
           "sort": 11,
           "show": true,
           "taro": true,
+          "v15": true,
           "author": "vickyYe",
           "dd": false
         },
@@ -972,6 +978,7 @@
           "show": true,
           "taro": true,
           "author": "vickyYE",
+          "v15": true,
           "dd": true
         },
         {
@@ -1023,6 +1030,7 @@
           "sort": 15,
           "show": true,
           "taro": true,
+          "v15": true,
           "author": "swag~jun",
           "dd": true
         },
@@ -1035,6 +1043,7 @@
           "sort": 9,
           "show": true,
           "taro": true,
+          "v15": true,
           "author": "Ymm0008",
           "dd": false
         },
@@ -1264,6 +1273,7 @@
           "sort": 20,
           "show": true,
           "taro": true,
+          "v15": true,
           "author": "ailululu",
           "dd": true
         },
