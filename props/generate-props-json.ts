@@ -67,10 +67,11 @@ function findTypeAlias(node: ts.Node, sourceFile: ts.SourceFile) {
           const moduleSpecifier = node.moduleSpecifier
             .getText(sourceFile)
             .replace(/['"]/g, '')
+
           if (moduleSpecifier.startsWith('.')) {
             const importedFilePath = path.resolve(
               path.dirname(sourceFile.fileName),
-              moduleSpecifier + '.ts'
+              `${moduleSpecifier}.ts`
             )
             if (fs.existsSync(importedFilePath)) {
               const importedContent = fs.readFileSync(importedFilePath, 'utf-8')
@@ -323,17 +324,20 @@ function extractFromObjectLiteral(
           const elements = initializer.elements.map((e) => {
             if (ts.isStringLiteral(e)) {
               return e.text === '' ? '' : `${e.text}`
-            } else if (ts.isNumericLiteral(e)) {
-              return e.text
-            } else if (e.kind === ts.SyntaxKind.TrueKeyword) {
-              return 'true'
-            } else if (e.kind === ts.SyntaxKind.FalseKeyword) {
-              return 'false'
-            } else if (e.kind === ts.SyntaxKind.NullKeyword) {
-              return 'null'
-            } else {
-              return e.getText(sourceFile)
             }
+            if (ts.isNumericLiteral(e)) {
+              return e.text
+            }
+            if (e.kind === ts.SyntaxKind.TrueKeyword) {
+              return 'true'
+            }
+            if (e.kind === ts.SyntaxKind.FalseKeyword) {
+              return 'false'
+            }
+            if (e.kind === ts.SyntaxKind.NullKeyword) {
+              return 'null'
+            }
+            return e.getText(sourceFile)
           })
           defaultValue = `[${elements.join(', ')}]`
         }
@@ -399,7 +403,7 @@ function extractPropsFromFile(filePath: string): ComponentDef | null {
   findTypeAlias(sourceFile, sourceFile)
 
   let componentName = ''
-  let propsInterface: PropType[] = []
+  const propsInterface: PropType[] = []
 
   // 获取默认值
   const defaultProps = null
@@ -522,7 +526,7 @@ function generatePropsJson() {
   }
 
   // Write the result to a JSON file
-  const outputPath = path.join(__dirname, '../src/props.json')
+  const outputPath = path.join(__dirname, '../props/props.json')
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2))
 }
 
