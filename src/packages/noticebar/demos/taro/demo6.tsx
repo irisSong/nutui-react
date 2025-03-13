@@ -1,12 +1,12 @@
 import React from 'react'
-import { NoticeBar, Button } from '@nutui/nutui-react-taro'
+import { NoticeBar, Button, Space } from '@nutui/nutui-react-taro'
 
 const Demo6 = () => {
   const text =
     'NutUI-React 是京东风格的 React 移动端组件库，开发和服务于移动 Web 界面的企业级产品。'
   const textShort = 'NutUI 是京东风格的移动端组件库'
   return (
-    <>
+    <Space direction="vertical">
       <NoticeBar
         content={text}
         wrap
@@ -19,7 +19,6 @@ const Demo6 = () => {
           </>
         }
       />
-      <br />
       <NoticeBar
         content={textShort}
         wrap
@@ -35,7 +34,7 @@ const Demo6 = () => {
           </>
         }
       />
-    </>
+    </Space>
   )
 }
 export default Demo6

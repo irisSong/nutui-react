@@ -12,10 +12,10 @@ import Demo4 from './demos/taro/demo4'
 import Demo5 from './demos/taro/demo5'
 import Demo6 from './demos/taro/demo6'
 import Demo7 from './demos/taro/demo7'
-import Demo8 from './demos/taro/demo8'
-import Demo9 from './demos/taro/demo9'
-import Demo10 from './demos/taro/demo10'
-import Demo11 from './demos/taro/demo11'
+// import Demo8 from './demos/taro/demo8'
+// import Demo9 from './demos/taro/demo9'
+// import Demo10 from './demos/taro/demo10'
+// import Demo11 from './demos/taro/demo11'
 
 const NoticeBarDemo = () => {
   const [translated] = useTranslate({
@@ -68,7 +68,7 @@ const NoticeBarDemo = () => {
         <Demo6 />
         <View className="h2">{translated.customTheme}</View>
         <Demo7 />
-        <View className="h2">{translated.vertical}</View>
+        {/* <View className="h2">{translated.vertical}</View>
         <Demo8 />
         <View className="h2">{translated.complexAm}</View>
         <View className="interstroll-list">
@@ -81,7 +81,7 @@ const NoticeBarDemo = () => {
         <View className="h2">{translated.customRightIcon}</View>
         <View className="interstroll-list">
           <Demo11 />
-        </View>
+        </View> */}
       </ScrollView>
     </>
   )

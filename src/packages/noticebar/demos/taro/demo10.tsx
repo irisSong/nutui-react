@@ -1,5 +1,6 @@
 import React from 'react'
 import { NoticeBar } from '@nutui/nutui-react-taro'
+import { View } from '@tarojs/components'
 
 const Demo10 = () => {
   const horseLamp3 = [
@@ -23,7 +24,7 @@ const Demo10 = () => {
       >
         {horseLamp3.map((item, index) => {
           return (
-            <div
+            <View
               className="custom-item"
               style={{ height: '50px', lineHeight: '50px' }}
               key={index}
@@ -32,7 +33,7 @@ const Demo10 = () => {
               }}
             >
               {item}
-            </div>
+            </View>
           )
         })}
       </NoticeBar>

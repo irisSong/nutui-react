@@ -8,8 +8,7 @@
     height: $noticebar-height;
     padding: $noticebar-box-padding;
     font-size: $noticebar-font-size;
-    background: $noticebar-background;
-    color: $noticebar-color;
+    background-color: $noticebar-background;
     border-radius: $noticebar-border-radius;
 
     &-wrapable,
@@ -45,6 +44,13 @@
       }
     }
 
+    &-left-icon,
+    &-right-icon {
+      .nut-icon {
+        color: $noticebar-color;
+      }
+    }
+
     &-left-icon {
       display: flex;
       height: $noticebar-left-icon-width;
@@ -70,13 +76,18 @@
       display: flex;
       flex: 1;
       height: $noticebar-line-height;
-      line-height: $noticebar-line-height;
       overflow: hidden;
       position: relative;
 
       .nut-noticebar-box-wrap-content {
         position: absolute;
         white-space: nowrap;
+        line-height: $noticebar-line-height;
+        color: $noticebar-color;
+        background-color: aqua;
+        animation-delay: 0s;
+        animation-duration: 0s;
+        transform: translate3d(0, 0, 0);
 
         &.nut-ellipsis {
           max-width: 100%;

@@ -1,6 +1,7 @@
 import React from 'react'
-import { NoticeBar, Image } from '@nutui/nutui-react-taro'
-import { Failure } from '@nutui/icons-react-taro'
+import { NoticeBar } from '@nutui/nutui-react-taro'
+import { Failure, Service } from '@nutui/icons-react-taro'
+import { Text } from '@tarojs/components'
 
 const Demo4 = () => {
   const text =
@@ -8,28 +9,29 @@ const Demo4 = () => {
   const hello = () => {
     console.log('hello world')
   }
+  function redirectTo(arg0: { url: string }) {
+    throw new Error('Function not implemented.')
+  }
+
   return (
     <>
       <NoticeBar closeable onClick={hello}>
         {text}
       </NoticeBar>
-      <br />
+
       <NoticeBar closeable rightIcon={<Failure />} onClick={hello}>
         {text}
       </NoticeBar>
-      <br />
-      <NoticeBar
-        leftIcon={
-          <Image
-            width="16px"
-            height="16px"
-            src="https://img13.360buyimg.com/imagetools/jfs/t1/72082/2/3006/1197/5d130c8dE1c71bcd6/e48a3b60804c9775.png"
-          />
-        }
-      >
-        <a href="https://www.jd.com" style={{ color: '#4d88ff' }}>
+
+      <NoticeBar leftIcon={<Service color="#4d88ff" />}>
+        <Text
+          onClick={() => {
+            redirectTo({ url: 'https://www.jd.com' })
+          }}
+          style={{ color: '#4d88ff' }}
+        >
           京东商城
-        </a>
+        </Text>
       </NoticeBar>
     </>
   )

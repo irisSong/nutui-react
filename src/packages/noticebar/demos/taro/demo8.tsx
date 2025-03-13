@@ -1,5 +1,6 @@
 import React from 'react'
 import { NoticeBar } from '@nutui/nutui-react-taro'
+import { View } from '@tarojs/components'
 
 const Demo8 = () => {
   const horseLamp1 = [
@@ -12,7 +13,7 @@ const Demo8 = () => {
     console.log(item)
   }
   return (
-    <div className="interstroll-list">
+    <View className="interstroll-list">
       <NoticeBar
         direction="vertical"
         list={horseLamp1}
@@ -24,7 +25,7 @@ const Demo8 = () => {
         }}
         closeable
       />
-    </div>
+    </View>
   )
 }
 export default Demo8
