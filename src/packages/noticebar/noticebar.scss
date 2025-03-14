@@ -84,7 +84,6 @@
         white-space: nowrap;
         line-height: $noticebar-line-height;
         color: $noticebar-color;
-        background-color: aqua;
         animation-delay: 0s;
         animation-duration: 0s;
         transform: translate3d(0, 0, 0);
@@ -98,12 +97,23 @@
       }
     }
 
+    .play,
+    .play-infinite {
+      animation-delay: 0s;
+      animation-duration: 16.7s;
+      animation-fill-mode: both;
+      animation-play-state: running;
+      animation-timing-function: linear;
+    }
+
     .play {
-      animation: nut-notice-bar-play linear both running;
+      animation-name: nut-notice-bar-play;
+      animation-iteration-count: 1;
     }
 
     .play-infinite {
-      animation: nut-notice-bar-play-infinite linear infinite both running;
+      animation-name: nut-notice-bar-play-infinite;
+      animation-iteration-count: infinite;
     }
 
     .play-vertical {

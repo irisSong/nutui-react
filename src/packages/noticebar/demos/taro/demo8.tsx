@@ -1,6 +1,7 @@
 import React from 'react'
 import { NoticeBar } from '@nutui/nutui-react-taro'
 import { View } from '@tarojs/components'
+import pxTransform from '@/utils/px-transform'
 
 const Demo8 = () => {
   const horseLamp1 = [
@@ -19,7 +20,7 @@ const Demo8 = () => {
         list={horseLamp1}
         speed={10}
         duration={1000}
-        height={30}
+        height={pxTransform(30)}
         onClick={(e) => {
           go(e.target.innerHtml)
         }}

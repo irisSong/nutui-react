@@ -12,6 +12,8 @@ import { getRectByTaro } from '@/utils/get-rect-by-taro'
 import { ComponentDefaults } from '@/utils/typings'
 import { useRtl } from '@/packages/configprovider/index.taro'
 import { TaroNoticeBarProps } from '@/types'
+import pxTransform from '@/utils/px-transform'
+import useUuid from '@/hooks/use-uuid'
 
 const defaultProps = {
   ...ComponentDefaults,
@@ -64,8 +66,12 @@ export const NoticeBar: FunctionComponent<
   }
 
   const classPrefix = 'nut-noticebar'
-  const wrapRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
+  const uid = useUuid()
+  const wrapId = `${classPrefix}-wrap-${uid}`
+  const contentId = `${classPrefix}-content-${uid}`
+  const containerId = `${classPrefix}-container-${uid}`
+  const wrapRef = useRef(null)
+  const contentRef = useRef(null)
   const [showNoticeBar, SetShowNoticeBar] = useState(true)
   const scrollList: any = useRef([])
   const [wrapWidth, SetWrapWidth] = useState(0)
@@ -124,8 +130,6 @@ export const NoticeBar: FunctionComponent<
         scrollList.current = [].concat(list)
         startRollEasy()
       }
-    } else {
-      initScrollWrap(content)
     }
     return () => {
       // 销毁事件
@@ -134,8 +138,16 @@ export const NoticeBar: FunctionComponent<
   }, [])
 
   useEffect(() => {
-    initScrollWrap(content)
-  }, [content])
+    if (showNoticeBar === false || isVertical) {
+      return
+    }
+
+    if (!wrapRef.current || !contentRef.current) {
+      console.log('canScroll2')
+      return
+    }
+    setTimeout(() => initScrollWrap(content))
+  }, [showNoticeBar, content, wrapRef.current, contentRef.current])
 
   useEffect(() => {
     if (list && list.length) {
@@ -143,30 +155,31 @@ export const NoticeBar: FunctionComponent<
     }
   }, [list])
 
-  const initScrollWrap = (value: string) => {
-    if (showNoticeBar === false) {
-      return
+  const initScrollWrap = async (value: string) => {
+    const warpRes = await getRectByTaro(wrapRef.current, wrapId)
+    const contentRes = await getRectByTaro(contentRef.current, contentId)
+    const wrapW = warpRes.width
+    const offsetW = contentRes.width
+    console.log(
+      'canScroll4',
+      wrapId,
+      contentId,
+      warpRes?.width,
+      contentRes?.width,
+      warpRes,
+      contentRes
+    )
+    const canScroll =
+      align === 'left' && scrollable == null ? offsetW > wrapW : scrollable
+    SetIsCanScroll(canScroll)
+    if (canScroll) {
+      SetWrapWidth(wrapW)
+      SetOffsetW(offsetW)
+      SetAnimationDuration(offsetW / speed)
+      SetAnimationClass('play-infinite')
+    } else {
+      SetAnimationClass('')
     }
-    setTimeout(async () => {
-      if (!wrapRef.current || !contentRef.current) {
-        return
-      }
-      const warpRes = await getRectByTaro(wrapRef.current)
-      const contentRes = await getRectByTaro(contentRef.current)
-      const wrapW = warpRes.width
-      const offsetW = contentRes.width
-      const canScroll =
-        align === 'left' && scrollable == null ? offsetW > wrapW : scrollable
-      SetIsCanScroll(canScroll)
-      if (canScroll) {
-        SetWrapWidth(wrapW)
-        SetOffsetW(offsetW)
-        SetAnimationDuration(offsetW / speed)
-        SetAnimationClass('play')
-      } else {
-        SetAnimationClass('')
-      }
-    }, 0)
   }
   const handleClick = (event: ITouchEvent) => {
     click && click(event)
@@ -181,6 +194,7 @@ export const NoticeBar: FunctionComponent<
   }
 
   const onAnimationEnd = () => {
+    console.log('onAnimationEnd')
     SetFirstRound(false)
     setTimeout(() => {
       SetAnimationDuration((offsetWidth + wrapWidth) / speed)
@@ -194,7 +208,7 @@ export const NoticeBar: FunctionComponent<
       height / speed / 4 < 1
         ? Number((height / speed / 4).toFixed(1)) * 1000
         : ~~(height / speed / 4) * 1000
-    const timerCurr = window.setInterval(showhorseLamp, time + Number(duration))
+    const timerCurr = setInterval(showhorseLamp, time + Number(duration))
     SetTimer(timerCurr)
   }
   const showhorseLamp = () => {
@@ -228,7 +242,7 @@ export const NoticeBar: FunctionComponent<
   const contentStyle = {
     animationDelay: `${firstRound ? delay : 0}s`,
     animationDuration: `${animationDuration}s`,
-    transform: `translateX(${firstRound ? 0 : `${rtl ? -wrapWidth : wrapWidth}px`})`,
+    transform: `translateX(${firstRound ? 0 : `${pxTransform(rtl ? -wrapWidth : wrapWidth)}`})`,
   }
 
   const barStyle = {
@@ -252,7 +266,7 @@ export const NoticeBar: FunctionComponent<
   const init = (active = +0) => {
     if (!container?.current) return
     setTimeout(async () => {
-      const rects = await getRectByTaro(container?.current)
+      const rects = await getRectByTaro(container?.current, containerId)
       const _active = Math.max(Math.min(childCount - 1, active), 0)
       const _height = rects?.height
       trackSize = childCount * Number(_height)
@@ -428,9 +442,11 @@ export const NoticeBar: FunctionComponent<
           {leftIcon ? (
             <View className="nut-noticebar-box-left-icon">{leftIcon}</View>
           ) : null}
-          <View ref={wrapRef} className="nut-noticebar-box-wrap">
+          <View>{animationClass}</View>
+          <View ref={wrapRef} className="nut-noticebar-box-wrap" id={wrapId}>
             <View
               ref={contentRef}
+              id={contentId}
               className={`nut-noticebar-box-wrap-content ${animationClass} ${
                 isEllipsis() ? 'nut-ellipsis' : ''
               }`}
@@ -459,6 +475,7 @@ export const NoticeBar: FunctionComponent<
           className="nut-noticebar-vertical"
           style={barStyle}
           ref={container}
+          id={containerId}
           onClick={handleClick}
         >
           {leftIcon ? (
