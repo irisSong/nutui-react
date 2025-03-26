@@ -7,6 +7,7 @@ import React, {
 } from 'react'
 import { ITouchEvent, View } from '@tarojs/components'
 import { Close, Notice } from '@nutui/icons-react-taro'
+import { nextTick } from '@tarojs/taro'
 import classNames from 'classnames'
 import { getRectByTaro } from '@/utils/get-rect-by-taro'
 import { ComponentDefaults } from '@/utils/typings'
@@ -146,7 +147,9 @@ export const NoticeBar: FunctionComponent<
       console.log('canScroll2')
       return
     }
-    setTimeout(() => initScrollWrap(content))
+    nextTick(() => {
+      initScrollWrap(content)
+    })
   }, [showNoticeBar, content, wrapRef.current, contentRef.current])
 
   useEffect(() => {
@@ -165,9 +168,7 @@ export const NoticeBar: FunctionComponent<
       wrapId,
       contentId,
       warpRes?.width,
-      contentRes?.width,
-      warpRes,
-      contentRes
+      contentRes?.width
     )
     const canScroll =
       align === 'left' && scrollable == null ? offsetW > wrapW : scrollable
@@ -442,7 +443,6 @@ export const NoticeBar: FunctionComponent<
           {leftIcon ? (
             <View className="nut-noticebar-box-left-icon">{leftIcon}</View>
           ) : null}
-          <View>{animationClass}</View>
           <View ref={wrapRef} className="nut-noticebar-box-wrap" id={wrapId}>
             <View
               ref={contentRef}
