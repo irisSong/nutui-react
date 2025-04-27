@@ -247,7 +247,7 @@ export const NoticeBar: FunctionComponent<
   }
 
   const barStyle = {
-    height: isVertical ? `${height}px` : '',
+    height: isVertical ? pxTransform(height) : '',
   }
 
   const duringTime =

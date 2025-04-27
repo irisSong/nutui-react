@@ -18,11 +18,15 @@
 
       .nut-noticebar-box-wrap {
         height: auto;
+        &-content {
+          height: auto;
+        }
       }
     }
 
     &-wrapable {
       .nut-noticebar-box-wrap {
+        flex-wrap: wrap;
         .nut-noticebar-box-wrap-content {
           position: relative;
           white-space: normal;
