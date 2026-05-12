@@ -11,11 +11,11 @@
 .index-header {
   display: flex;
   align-items: center;
-  height: 117px;
+  height: scale-px(117px);
   > img {
-    width: 67px;
-    height: 67px;
-    margin-right: 18px;
+    width: scale-px(67px);
+    height: scale-px(67px);
+    margin-right: scale-px(18px);
     flex-shrink: 0;
   }
   .info {
@@ -23,12 +23,12 @@
     flex-direction: column;
     h1 {
       margin: 0;
-      height: 48px;
+      height: scale-px(48px);
       font-size: 34px;
       color: rgba(51, 51, 51, 1);
     }
     p {
-      height: 18px;
+      height: scale-px(18px);
       font-size: 12px;
       color: rgba(154, 155, 157, 1);
     }
@@ -41,13 +41,13 @@
 }
 .tour-demo-img {
   img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: scale-px(20px);
+    height: scale-px(20px);
+    margin-right: scale-px(10px);
   }
 }
 .tour-demo-custom-content {
-  padding: 8px;
+  padding: scale-px(8px);
   display: flex;
   width: max-content;
   align-items: center;
