@@ -1,10 +1,10 @@
 .nut-calendar {
   .nut-calendar-btns {
-    height: scale-px(40px);
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0 scale-px(20px);
+    padding: 0 20px;
   }
 
   .nut-calendar-date {
@@ -18,27 +18,27 @@
 
   .wrapper {
     display: flex;
-    padding: 0 scale-px(40px);
+    padding: 0 40px;
   }
 
   .d_div {
-    margin: 0 scale-px(5px);
+    margin: 0 5px;
 
     .d_btn {
       background: #fa3f19;
       color: #fff;
       font-size: 12px;
-      padding: scale-px(2px) scale-px(8px);
-      border-radius: scale-px(4px);
+      padding: 2px 8px;
+      border-radius: 4px;
       display: inline-block;
-      height: scale-px(20px);
+      height: 20px;
     }
   }
 
   .info {
     display: block;
     font-size: 12px;
-    line-height: scale-px(16px);
+    line-height: 16px;
     color: #999;
   }
 }
@@ -49,10 +49,10 @@
   }
 
   .desc {
-    padding: scale-px(10px);
+    padding: 10px;
   }
 
   .desc1 {
-    padding: scale-px(10px);
+    padding: 10px;
   }
 }
