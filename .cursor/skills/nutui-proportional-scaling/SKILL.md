@@ -4,10 +4,13 @@ description: >-
   NutUI React proportional scaling on branch feat_resize: runtime --nut-scale-f /
   --nut-scale-font / --nut-scale-icon from scale-f.ts (H5) and scale-f.taro.ts
   (Taro), Sass helpers scale-px / scale-font-px / scale-icon-px and theme font
-  tokens in variables.scss & theme-*.scss; profiles standard / large / elderly;
+  tokens in variables.scss & theme-*.scss; npm run build / build:taro run
+  scripts/px-to-scale-px-in-component-scss.cjs on component SCSS in memory; profiles standard / large / elderly;
   commit-backed rules e.g. never scale 0px. Use when implementing 多尺寸适配,
   等比适配, 大字版, 老年版, scale-px, viewport or native bridge scaling, or
-  editing component SCSS for resize.
+  editing component SCSS for resize; SCSS: prefer calc($token + Npx) over
+  #{} in calc, use outer calc() when mixing tokens that compile to
+  var(--nutui-*).
 ---
 
 # NutUI React 等比适配
@@ -48,6 +51,12 @@ description: >-
 
 **主题字号档**（`theme-default.scss` / `theme-dark.scss`）：`--nutui-font-size-*` 使用 `calc(Npx * var(--nut-scale-font, var(--nut-scale-f, 1)))`，与 **大字/老年** 档位对齐。
 
+### 2.1 `npm run build` / `npm run build:taro` 时的 px → `scale-px`
+
+- 与 `package.json` 中顺序一致：先跑 **`scripts/replace-css-var.js`**，再 **`scripts/build.mjs`** 或 **`scripts/build-taro.mjs`**；上述脚本在读取 **`src/packages/**/\*.scss`（不含 demo）** 后，会经 **`scripts/px-to-scale-px-in-component-scss.cjs`** 在**内存**里把声明值中的裸 **`Npx`** 转为 **`scale-px(Npx)`**（规则见 §3），**不写回\*\*仓库里的组件 SCSS。
+- 源码里可继续手写 **`scale-px` / `scale-font-px` / `scale-icon-px`**；构建不会重复嵌套 `scale-px`。
+- 该脚本对 **`calc(...)` 体内同时含 `$` 与 `/`** 的整段先做占位再替换裸 `px`，避免 postcss-scss 把 **`calc($var / 2)`** 等拆坏；其它 `calc` 内的裸 `Npx` 仍会按规则转为 `scale-px`。
+
 ---
 
 ## 3. 提交里固化的规范（务必遵守）
@@ -70,6 +79,21 @@ description: >-
 - 图标占位：**`scale-icon-px`** 或已有 `--nut-icon-*`。
 - 保持与 **无障碍/大屏** 相关提交协同：同一文件改尺度时，勿回退 `dialog` 等对大字兼容的改动。
 
+### 3.5 组件 `.tsx` 图标尺寸治理（props → class → 变量）
+
+- 对 `@nutui/icons-react` / `@nutui/icons-react-taro`：尽量避免在组件上写死 `size={12}`、`width={16}`、`height={16}`。
+- **推荐模式**：在 `.tsx` 里只加语义化 `className`，到对应 `.scss` 里用变量控制尺寸（优先 `$icon-size-*` 阶梯，或组件专用变量）。
+- 若是内联 `<svg>`（非 NutUI 图标组件）也遵循同一规则：移除 `width/height` 字面量，改为 class，并在 SCSS 用变量（可新增如 `$xxx-icon-size`，默认 `scale-icon-px(Npx)`）。
+- 新增尺寸档优先沉淀到 `variables.scss`（如 `$icon-size-11`、`$icon-size-16`），避免同一像素值在多个组件重复散落。
+
+### 3.4 `calc()`、Sass 变量与 `#{}`（与 `variables.scss` / 主题 token 一致）
+
+- **推荐**：在 `calc()` 里直接写 Sass 变量，如 **`calc($steps-vertical-head-icon-size + 1px)`**、**`calc($rate-item-margin / 2)`**，而不是 **`calc(#{$steps-vertical-head-icon-size} + 1px)`**。`#{}` 只在需要把值**硬插成无引号 CSS 片段**、或要避免 Sass 对单位做提前合并时再考虑；普通设计 token 用 **`$var` 作为 `calc` 的操作数**即可。
+- **与 `var(--nutui-*)` 一起运算时**：许多 token 会展开为 **`var(--nutui-…, calc(Npx * var(--nut-scale-f, 1)))`**。此时**不要**指望纯 Sass 括号在声明值里做「减法 + 固定 px」，例如  
+  **`margin: 0 ($switch-height - $switch-border-width + 3px) 0 7px`**  
+  会在编译结果里拼成 **`var(...)var(...)`** 一类**缺少运算符**的非法片段。应写成 **`margin: 0 calc($switch-height - $switch-border-width + 3px) 0 7px`**，让整条长度在**一个** CSS `calc()` 里由浏览器解析。
+- **`100%` 与长度相减**：用 **`calc(100% - Npx)`** 一层即可，避免出现 **`100% - calc(...)`** 这类单位不合法的组合（历史上有过 postcss / 手工替换导致的损坏，以当前组件 SCSS 为准）。
+
 ---
 
 ## 4. 业务接入清单
@@ -85,6 +109,9 @@ description: >-
 
 - [ ] 新增 **0** 尺寸未误用 `scale-px(0px)`。
 - [ ] 字体/图标是否应走 **`scale-font-px` / `scale-icon-px`** 而非误用 `scale-px`。
+- [ ] 含 **`$token` 与裸 `px` 的混合运算**：若 token 会变成 **`var(--nutui-*)`**，是否已用 **`calc($a - $b + Npx)`**，而不是 **`($a - $b + Npx)`** 写在 `margin` / `width` 等非纯编译期长度位置。
+- [ ] `calc()` 内对设计 token 是否优先 **`calc($var + 1px)`**，避免无必要的 **`#{}`**。
+- [ ] 组件 `.tsx` 是否仍有写死图标尺寸（`size/width/height`）；如有，是否已改为 **class + SCSS 变量**（内联 `svg` 同理）。
 - [ ] TS 侧改 `scale-f*` 已同步考虑 **Taro** 文件。
 - [ ] 修改 `formatScaleValue` / 断点时，已通读 **视口与平板常量** 是否仍与文档、设计一致。
 
