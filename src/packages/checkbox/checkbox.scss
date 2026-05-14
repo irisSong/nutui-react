@@ -12,9 +12,9 @@
 
   &-icon-wrap {
     font-size: 0px;
-    line-height: 0px;
+    line-height: 0;
     border-radius: 50%;
-    box-shadow: 0px scale-px(2px) scale-px(4px) 0px rgba(255, 15, 35, 0.2);
+    box-shadow: 0 scale-px(2px) scale-px(4px) 0 rgba(255, 15, 35, 0.2);
   }
 
   &-icon-checked {
@@ -43,7 +43,7 @@
   &-icon-indeterminate {
     color: $color-primary;
     background-color: $white;
-    box-shadow: 0px scale-px(2px) scale-px(4px) 0px #ff0f2333;
+    box-shadow: 0 scale-px(2px) scale-px(4px) 0 #ff0f2333;
     border-radius: 50%;
 
     &.nut-checkbox-icon-disabled {
@@ -103,10 +103,10 @@
       bottom: 0;
       width: 0;
       height: 0;
-      border-top: scale-icon-px(10px) solid transparent;
-      border-left: scale-icon-px(10px) solid transparent;
-      border-bottom: scale-icon-px(10px) solid $color-primary;
-      border-right: scale-icon-px(10px) solid $color-primary;
+      border-top: $icon-size-10 solid transparent;
+      border-left: $icon-size-10 solid transparent;
+      border-bottom: $icon-size-10 solid $color-primary;
+      border-right: $icon-size-10 solid $color-primary;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
@@ -117,7 +117,7 @@
       height: scale-px(12px);
       position: absolute;
       color: $white;
-      right: 0px;
+      right: 0;
       bottom: 0;
       transform: translate(scale-px(-1px), scale-px(-2px));
     }

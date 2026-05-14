@@ -98,4 +98,9 @@
       width: scale-px(12px);
     }
   }
+
+  &-close-icon {
+    height: $icon-size-12;
+    width: $icon-size-12;
+  }
 }

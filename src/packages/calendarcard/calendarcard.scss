@@ -3,7 +3,6 @@
   border-radius: scale-px(12px);
   overflow: hidden;
   font-size: $calendar-base-font-size;
-  line-height: $calendar-base-font-size;
   color: $color-title;
 
   &-header {
@@ -12,6 +11,7 @@
     align-items: center;
     justify-content: space-between;
     font-weight: normal;
+    line-height: $line-height-l;
 
     &-left,
     &-right {
@@ -19,7 +19,6 @@
       flex-direction: row;
       cursor: pointer;
       margin: scale-px(16px);
-      line-height: 1;
 
       .left {
         margin-left: scale-px(8px);
@@ -32,8 +31,8 @@
   }
 
   &-icon {
-    width: 18px;
-    height: 18px;
+    width: scale-px(18px);
+    height: scale-px(18px);
     display: block;
   }
 

@@ -143,7 +143,7 @@
   &-sticky-left,
   &-sticky-right {
     position: absolute;
-    top: 0px;
+    top: 0;
     width: scale-px(8px);
     bottom: scale-px(-1px);
     overflow-x: hidden;

@@ -46,7 +46,7 @@
     align-items: center;
     min-width: scale-px(96px);
     max-width: 60%;
-    // max-width: scale-px(224px);
+    // max-width: 224px;
     box-sizing: border-box;
     font-size: $toast-text-font-size;
     text-align: $toast-inner-text-align;
@@ -58,7 +58,7 @@
 
     &-descrption {
       max-width: 68.2%;
-      // max-width: scale-px(256px);
+      // max-width: 256px;
     }
 
     &-normal {
