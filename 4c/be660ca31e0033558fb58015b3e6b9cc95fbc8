@@ -1,0 +1,19 @@
+src/utils/fold-screen.ts
+  s_2126af7893829e::t_fbc63af1cbd34a 73-74,76-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "4cbe660ca31e0033558fb58015b3e6b9cc95fbc8",
+  "prompts": {},
+  "sessions": {
+    "s_2126af7893829e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4540e2d7-3d8c-4fce-9b66-6c9f2ce67ab5",
+        "model": "default"
+      },
+      "human_author": "songchenglin3 <353833373@qq.com>"
+    }
+  }
+}

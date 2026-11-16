@@ -1,0 +1,61 @@
+src/packages/resultpage/demos/h5/demo4.tsx
+  s_2126af7893829e::t_579adeb6d491bd 28-29
+src/packages/resultpage/demos/taro/demo7.tsx
+  s_2126af7893829e::t_4170fe19536c19 26-27
+src/packages/resultpage/resultpage.taro.tsx
+  s_2126af7893829e::t_731d91030d3bd8 66
+  s_2126af7893829e::t_1865b772fcf3fd 69-70
+src/packages/resultpage/demos/h5/demo3.tsx
+  s_2126af7893829e::t_4bec7229d0774c 13-14
+src/styles/variables.scss
+  s_2126af7893829e::t_6979a689cf63a0 3272-3279
+src/packages/resultpage/resultpage.tsx
+  s_2126af7893829e::t_4392949ab073b3 66-67
+  s_2126af7893829e::t_4ee175c9f66c86 63
+src/styles/variables-jrkf.scss
+  s_2126af7893829e::t_91f64bda24b06d 3325-3329
+src/styles/variables-daojia.scss
+  s_2126af7893829e::t_40a9b83858dc72 2016-2017
+src/packages/resultpage/demos/h5/demo2.tsx
+  s_2126af7893829e::t_8a8bbf60ae4416 14-15
+src/packages/resultpage/doc.taro.md
+  s_2126af7893829e::t_09993a6ca2222f 117-118
+src/packages/resultpage/doc.zh-TW.md
+  s_2126af7893829e::t_a1612e04f8b8bc 117-118
+src/packages/resultpage/doc.en-US.md
+  s_2126af7893829e::t_1ee7fd0cdf4a68 117-118
+src/packages/resultpage/demos/taro/demo2.tsx
+  s_2126af7893829e::t_554fcfea90db37 14-15
+src/packages/resultpage/doc.md
+  s_2126af7893829e::t_3bb9b86b3f4180 117-118
+src/packages/resultpage/demos/taro/demo3.tsx
+  s_2126af7893829e::t_6a3ba10f09161d 13-14
+src/packages/resultpage/demos/h5/demo1.tsx
+  s_2126af7893829e::t_b84eca011324b1 14-15
+src/packages/resultpage/resultpage.scss
+  s_2126af7893829e::t_0cc3c9ba3396d4 8,47-52
+src/packages/resultpage/demos/h5/demo7.tsx
+  s_2126af7893829e::t_e5f4179bd9e5c2 26-27
+src/styles/variables-jmapp.scss
+  s_2126af7893829e::t_728addc829144f 3303-3307
+src/packages/resultpage/demos/taro/demo1.tsx
+  s_2126af7893829e::t_7891dbf45fcfe8 14-15
+src/packages/resultpage/demos/taro/demo4.tsx
+  s_2126af7893829e::t_0dfe3aef4012b2 28-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "deaddb84a4eee944062f8e050adb8ab753653bc8",
+  "prompts": {},
+  "sessions": {
+    "s_2126af7893829e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4540e2d7-3d8c-4fce-9b66-6c9f2ce67ab5",
+        "model": "default"
+      },
+      "human_author": "songchenglin3 <353833373@qq.com>"
+    }
+  }
+}

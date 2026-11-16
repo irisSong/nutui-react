@@ -1,0 +1,30 @@
+src/packages/resultpage/doc.taro.md
+  s_2126af7893829e::t_c0c3eae1a6b680 119
+src/styles/variables.scss
+  s_2126af7893829e::t_260975a8e8ca8a 3282
+  s_2126af7893829e::t_575b7e52b8e856 3280-3281,3283
+src/packages/resultpage/doc.md
+  s_2126af7893829e::t_f069d2d8431233 119
+src/packages/resultpage/doc.zh-TW.md
+  s_2126af7893829e::t_79ae9fae152cfd 119
+src/packages/resultpage/doc.en-US.md
+  s_2126af7893829e::t_c36747d2ba9414 119
+src/packages/resultpage/resultpage.scss
+  s_2126af7893829e::t_972a2060eb7b46 53-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "4979ca2a5c32c4143478808b8e42da8dbf7fb969",
+  "prompts": {},
+  "sessions": {
+    "s_2126af7893829e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4540e2d7-3d8c-4fce-9b66-6c9f2ce67ab5",
+        "model": "default"
+      },
+      "human_author": "songchenglin3 <353833373@qq.com>"
+    }
+  }
+}
