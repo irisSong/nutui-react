@@ -1,0 +1,38 @@
+src/packages/countdown/utils.ts
+  s_3886612cd0f989::t_45dd48c6be1404 1-51,64-65
+src/packages/countdown/countdown.taro.tsx
+  s_3886612cd0f989::t_5d9128a2d5309a 20-22
+  s_3886612cd0f989::t_01233e1ac07468 230
+  s_3886612cd0f989::t_c78bb39681c67a 74-82,84-87,92,95-97,107,135-138,144,149,175
+  s_3886612cd0f989::t_c36da1cd62482e 14,162,221,224,231-232,239-243
+  s_3886612cd0f989::t_9fa17f40e2f513 83
+  s_3886612cd0f989::t_f63e90e950c81c 225-227
+src/packages/countdown/__test__/countdown.spec.tsx
+  s_3886612cd0f989::t_f39de815965bc4 166-234
+  s_3886612cd0f989::t_21d6daefe5fc16 79,83-84,89-100
+  s_3886612cd0f989::t_9cd1dc1d841915 5,17-38
+src/packages/countdown/countdown.tsx
+  s_3886612cd0f989::t_0b04ad68493c7e 11
+  s_3886612cd0f989::t_656678f536c949 80
+  s_3886612cd0f989::t_6946ffdf1aa7cf 132-133,136-137,142-144
+  s_3886612cd0f989::t_ac49bca177da4f 17-19
+  s_3886612cd0f989::t_c03cb57e5b4c89 140-141
+  s_3886612cd0f989::t_5e5740fef05600 211-214,220,225,252
+  s_3886612cd0f989::t_3a3014e2b18eae 71-79,81-84,89,92-95,105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "1a8ccdac9823f4b9b6c05b495db0c36b2db5aaf9",
+  "prompts": {},
+  "sessions": {
+    "s_3886612cd0f989": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "96d3fe1c-195e-40ba-aec8-c1f8068b2ab7",
+        "model": "default"
+      },
+      "human_author": "songchenglin3 <353833373@qq.com>"
+    }
+  }
+}
