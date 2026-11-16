@@ -1,0 +1,81 @@
+src/packages/dialog/content.taro.tsx
+  s_5b1a366b5d175e::t_b47c4f3afb16ea 16
+  s_5b1a366b5d175e::t_e08bc6c45fa149 36
+  s_5b1a366b5d175e::t_28efa8ea63a1e5 80-86
+src/packages/popup/doc.taro.md
+  s_5b1a366b5d175e::t_b187a309ee5ba1 104
+src/packages/dialog/content.tsx
+  s_5b1a366b5d175e::t_639f2bcec3f6ec 35
+  s_5b1a366b5d175e::t_a0a28652f0f9d5 15
+  s_5b1a366b5d175e::t_200423a81aee0f 79-85
+src/packages/popup/popup.tsx
+  s_5b1a366b5d175e::t_5a340d0257c8b4 80
+  s_5b1a366b5d175e::t_715173ebf32c87 132-135
+  s_5b1a366b5d175e::t_30b31a3920aece 18
+  s_5b1a366b5d175e::t_dab3a8fab45dae 102-105
+src/types/spec/popup/base.ts
+  s_5b1a366b5d175e::t_0033f3b1a23361 25-26
+src/packages/popup/doc.md
+  s_5b1a366b5d175e::t_ed1d3d9dbe0fbd 86
+src/packages/popup/popup.scss
+  s_5b1a366b5d175e::t_3c8829fd2d59c5 90-95,100-116
+  s_5b1a366b5d175e::t_24ff4d6f9ff271 427-452
+src/packages/dialog/dialog.scss
+  s_5b1a366b5d175e::t_825aa4c4705d45 274-295
+  s_5b1a366b5d175e::t_255ffdd7a507cc 24-27,34-37,40-67
+src/hooks/index.ts
+  s_5b1a366b5d175e::t_c4b4443c3cd30c 2
+src/packages/dialog/__test__/dialog.spec.tsx
+  s_5b1a366b5d175e::t_2420b96ebf005b 203-214
+src/packages/popup/__tests__/popup.spec.tsx
+  s_5b1a366b5d175e::t_a2a861592b12c7 185-200
+src/packages/dialog/doc.en-US.md
+  s_5b1a366b5d175e::t_8d1eafb74bd6bb 110-112
+src/packages/dialog/dialog.tsx
+  s_5b1a366b5d175e::t_727764e5fac8ca 339
+  s_5b1a366b5d175e::t_a39b70ed31f879 99,104
+  s_5b1a366b5d175e::t_a1be8ad2f84422 26
+src/packages/dialog/doc.taro.md
+  s_5b1a366b5d175e::t_57575050604e08 110-112,121
+src/packages/popup/doc.zh-TW.md
+  s_5b1a366b5d175e::t_561539d99e8915 86
+src/packages/popup/popup.taro.tsx
+  s_5b1a366b5d175e::t_1fc67b67a64c2a 20
+  s_5b1a366b5d175e::t_b96b0baa42a3bd 131-134
+  s_5b1a366b5d175e::t_62a23ffa3f8692 84,104-107
+src/types/spec/dialog/base.ts
+  s_5b1a366b5d175e::t_da9e61962b1245 53-54
+  s_5b1a366b5d175e::t_1f4a3854c8c7d4 22-23
+src/hooks/index.taro.ts
+  s_5b1a366b5d175e::t_18b8392d5860aa 3
+src/packages/popup/doc.en-US.md
+  s_5b1a366b5d175e::t_ce96421df973f4 86
+src/packages/dialog/doc.md
+  s_5b1a366b5d175e::t_07cf281a8b1aa2 110-112
+src/hooks/use-fold-segment.ts
+  s_5b1a366b5d175e::t_f8c77bd097cc44 1-26
+src/packages/dialog/doc.zh-TW.md
+  s_5b1a366b5d175e::t_94556240b6ea68 110-112
+src/utils/fold-screen.ts
+  s_5b1a366b5d175e::t_35e2380654aae1 1-99
+src/packages/dialog/dialog.taro.tsx
+  s_5b1a366b5d175e::t_f7fb1d2657a394 27
+  s_5b1a366b5d175e::t_520ee8a88b7735 101,108
+  s_5b1a366b5d175e::t_63c6809b6091b4 354
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "76f5429376e86a2d84a1e6e9e3539339f0544a7c",
+  "prompts": {},
+  "sessions": {
+    "s_5b1a366b5d175e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "63408a5b-7a17-4e24-a0a8-6c7cb733561b",
+        "model": "default"
+      },
+      "human_author": "songchenglin3 <353833373@qq.com>"
+    }
+  }
+}
