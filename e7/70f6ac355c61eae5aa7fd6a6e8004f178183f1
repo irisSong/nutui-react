@@ -1,0 +1,22 @@
+src/packages/dialog/__test__/dialog.spec.tsx
+  s_3886612cd0f989::t_9a3199df363250 423,425,428,434,454-456
+  s_3886612cd0f989::t_ae75706bca19a9 213-219,221-319,349-417,424,427,429-430,432-433,435-436,438-453,457-494
+  s_3886612cd0f989::t_4a12f2c417d61e 418-422,426,431,437
+  s_3886612cd0f989::t_72de7e5824ac4f 220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "e770f6ac355c61eae5aa7fd6a6e8004f178183f1",
+  "prompts": {},
+  "sessions": {
+    "s_3886612cd0f989": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "96d3fe1c-195e-40ba-aec8-c1f8068b2ab7",
+        "model": "default"
+      },
+      "human_author": "songchenglin3 <353833373@qq.com>"
+    }
+  }
+}
