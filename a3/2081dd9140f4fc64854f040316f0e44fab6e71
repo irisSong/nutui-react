@@ -1,0 +1,23 @@
+src/packages/countdown/__test__/countdown.spec.tsx
+  s_3886612cd0f989::t_004b5f055351dc 166-207
+src/packages/countdown/countdown.taro.tsx
+  s_3886612cd0f989::t_eb90746c05ddf9 134-135,137
+src/packages/countdown/countdown.tsx
+  s_3886612cd0f989::t_3f213eb5890f4c 210-211,213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "a32081dd9140f4fc64854f040316f0e44fab6e71",
+  "prompts": {},
+  "sessions": {
+    "s_3886612cd0f989": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "96d3fe1c-195e-40ba-aec8-c1f8068b2ab7",
+        "model": "default"
+      },
+      "human_author": "songchenglin3 <353833373@qq.com>"
+    }
+  }
+}
